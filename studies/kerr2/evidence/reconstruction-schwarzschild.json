@@ -1,0 +1,68 @@
+{
+  "schema": "kerr2.reconstruction/1",
+  "case": "schwarzschild",
+  "case_manifest_sha256": "d4e75fd0f3a9d8f466e30720b4638983715f14e1bb558674b79f8b9e81bd5519",
+  "view": {
+    "case": "schwarzschild",
+    "view": 0,
+    "zoom": 4,
+    "panX": 0,
+    "panY": 4.5,
+    "mask": 15,
+    "samples": 16,
+    "exposure": 1.2,
+    "curve": 0,
+    "canvas_px": [
+      760,
+      788
+    ],
+    "dpr": 1,
+    "loading": false,
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3, Unspecified Version)",
+    "browser": "Playwright MCP headless Chromium",
+    "overlays": "hidden (body.capture)",
+    "hash": "schwarzschild/v=0/z=4/x=0/y=4.5/m=15/s=16/e=1.2/c=0",
+    "page_sources": {
+      "index.html": "fddfdb122d44153c741153869d93dde72236679b02e537703906fad4d3f99162",
+      "src/app.js": "8d10148196f4283092fa60cd0dd0c9f5c5ade130303d49ecb0ff0206649c822c",
+      "src/app.css": "ce329022438ec37bd7d17544fec2138360dabdeeed19b53978b3621f78e51b2e",
+      "shaders/kerr2.frag": "c1a09c53f21368e87832b214a87b4a8c55ef6ab26af4eaec2e1dfacf4ee74190",
+      "shaders/screen.vert": "deeb139524e5809634bf1dcb23ca60915b6b26928d8a89656c7ca3f33b4122f6",
+      "scenes/kerr2.x3d": "256bb4fc82cadfe27a3f1bd062fa65aa2a6bf0bdea2ad725c1fc4c92894f311e"
+    }
+  },
+  "capture_sha256": "cf84e83fb309416bab7c060e84c6f8c06bd68e8463924b997b01f002f3135f9d",
+  "offline_sha256": "5cea38da5af6b2462acf9ca59aee83022d4c778f6513ea9a4ae014470527bbbc",
+  "witnesses": [
+    {
+      "id": "signal: offline luminance standard deviation",
+      "pass": true,
+      "observed": 0.21417893883442068,
+      "limit": 0.02,
+      "rule": "at least"
+    },
+    {
+      "id": "luminance correlation, browser vs offline",
+      "pass": true,
+      "observed": 0.9999996079679802,
+      "limit": 0.98,
+      "rule": "at least"
+    },
+    {
+      "id": "mean absolute difference (8-bit units)",
+      "pass": true,
+      "observed": 0.003639571644848161,
+      "limit": 4.0,
+      "rule": "at most"
+    },
+    {
+      "id": "negative control: vertically flipped capture correlation stays below 0.98",
+      "pass": true,
+      "observed": -0.648545983314785,
+      "limit": 0.979999999999,
+      "rule": "at most"
+    }
+  ],
+  "pass": true,
+  "scope": "One view per case. Shares the mapping's assumptions with the shader (law 25): it detects GPU-path errors (orientation, decoding, sampling), not mistakes in the mapping itself."
+}

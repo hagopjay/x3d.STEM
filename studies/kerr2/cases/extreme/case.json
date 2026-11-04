@@ -1,0 +1,351 @@
+{
+  "schema": "loom.scientific-case/1",
+  "id": "kerr2/extreme",
+  "kind": "kerr2",
+  "name": "extreme",
+  "title": "Near-extremal edge-on ring (a = 0.99, 84\u00b0)",
+  "equation": "null Kerr geodesics in Mino time (u = 1/r, z = cos theta); optically thin equatorial disk, every crossing kept",
+  "domain": {
+    "shape": [
+      1600,
+      1000
+    ],
+    "units": "G=M=c=1; screen impact coordinates in GM/c^2",
+    "boundary": "observer at r = 200; disk rin = ISCO to rout = 22"
+  },
+  "parameters": {
+    "spin": 0.99,
+    "inclination_degrees": 84.0,
+    "isco": 1.4544979380596716,
+    "outer_disk": 22.0,
+    "observer_r": 200.0,
+    "screen_width": 36.0,
+    "tolerance": 1e-09,
+    "crossings_recorded": 4,
+    "display_temperature_K": 6500.0,
+    "layer_weight": 0.25
+  },
+  "display": {
+    "color": "blackbody at g T(r) through the CIE 1931 2-degree table, linear sRGB (D65 primaries), RGBM16",
+    "cie_table": {
+      "file": "sources/CIE_xyz_1931_2deg.csv",
+      "sha256": "fa663e3535a7e0763a745993a1f0a192eb0275ac46ad2d1befd7626841e713c1",
+      "doi": "10.25039/CIE.DS.xvudnb9b",
+      "licence": "CC BY-SA 4.0"
+    },
+    "geometry": "geometry.json",
+    "probe": "image.f32"
+  },
+  "limits": [
+    "Optically thin equatorial emission with a constant layer weight; no absorption, scattering, polarization or GRMHD.",
+    "Display temperature scale is authored (6,500 K peak); real accretion disks are far hotter; colour is bound to g, the scale is not.",
+    "Crossings beyond n = 3 are not traced (their contribution is below e^-4pi of n = 0).",
+    "The ring atlas is sampled; display interpolation between samples is not a computed ray.",
+    "Observer at finite r = 200 with impact-parameter screen, as in the Scientific Loom."
+  ],
+  "frames": [
+    {
+      "file": "cases/extreme/image-n0.png",
+      "sha256": "4aafe200c313d61d2390e0a53a51e1d859d2a2b8360549973bab01be9df23940",
+      "bytes": 105127,
+      "encoding": "linear RGBM; multiplier 16",
+      "time": 0,
+      "clipped_values": 0,
+      "layer": 0,
+      "kind": "image"
+    },
+    {
+      "file": "cases/extreme/image-n1.png",
+      "sha256": "1e00db818db0d6abe767dc8985435de3d85283db57d906906a965bdd7a0e1af2",
+      "bytes": 67131,
+      "encoding": "linear RGBM; multiplier 16",
+      "time": 0,
+      "clipped_values": 0,
+      "layer": 1,
+      "kind": "image"
+    },
+    {
+      "file": "cases/extreme/image-n2.png",
+      "sha256": "43b363ec37187cd3a3fc3ac7f25a47d0534177347ddaadcc6123de73d4736211",
+      "bytes": 20639,
+      "encoding": "linear RGBM; multiplier 16",
+      "time": 0,
+      "clipped_values": 0,
+      "layer": 2,
+      "kind": "image"
+    },
+    {
+      "file": "cases/extreme/image-n3.png",
+      "sha256": "044f3a0c0bebacde94aa1ca9adb4d902db15c3cfaa83df1305d70467f5422760",
+      "bytes": 11728,
+      "encoding": "linear RGBM; multiplier 16",
+      "time": 0,
+      "clipped_values": 0,
+      "layer": 3,
+      "kind": "image"
+    },
+    {
+      "file": "cases/extreme/ring-n0.png",
+      "sha256": "d608d2914846d65f9961abe0070f5783f42ca92f9267971e05075c70b2a7530e",
+      "bytes": 113002,
+      "encoding": "linear RGBM; multiplier 16",
+      "time": 0,
+      "clipped_values": 0,
+      "layer": 0,
+      "kind": "ring"
+    },
+    {
+      "file": "cases/extreme/ring-n1.png",
+      "sha256": "e8666b8eb9404a2c154364b25c9e80768f22a62aff4570bc450fdd86011c64af",
+      "bytes": 126129,
+      "encoding": "linear RGBM; multiplier 16",
+      "time": 0,
+      "clipped_values": 0,
+      "layer": 1,
+      "kind": "ring"
+    },
+    {
+      "file": "cases/extreme/ring-n2.png",
+      "sha256": "46893364a3ee83760a453a92b5575fa4c135273b6b35188d2627bdd824d66fd1",
+      "bytes": 95112,
+      "encoding": "linear RGBM; multiplier 16",
+      "time": 0,
+      "clipped_values": 0,
+      "layer": 2,
+      "kind": "ring"
+    },
+    {
+      "file": "cases/extreme/ring-n3.png",
+      "sha256": "43474753536d3d6ea2a9037d3636e47c71daa8754fbb43f354b721987a7b7da0",
+      "bytes": 99078,
+      "encoding": "linear RGBM; multiplier 16",
+      "time": 0,
+      "clipped_values": 0,
+      "layer": 3,
+      "kind": "ring"
+    },
+    {
+      "file": "cases/extreme/curve.png",
+      "sha256": "0917282b9bbeb5704f7e07786ce0ba769265f67c8b8a6a582b5a4541720e8beb",
+      "bytes": 4635,
+      "kind": "curve",
+      "encoding": "rho_c(psi)/16 M as 24-bit RGB, psi = (k+0.5) 2pi/npsi",
+      "time": 0,
+      "clipped_values": 0
+    }
+  ],
+  "metrics": [
+    {
+      "time": 0,
+      "a": 0.99,
+      "inclination_degrees": 84.0,
+      "isco": 1.4544979380596716,
+      "disk_rays_n0": 623467,
+      "captured_pixels": 152002,
+      "crossing_cap_pixels": 825,
+      "max_constraint": 2.48761864440894e-08,
+      "edge_unresolved_bisections": 0,
+      "edge_deviation_median": 5.205389190803163e-07,
+      "subring_width_median": {
+        "1": 0.93973884535682,
+        "2": 0.04757789591987005,
+        "3": 0.0037003604998742112
+      },
+      "n1_unbounded_angles": 0,
+      "subrings_reaching_curve_although_rph_below_rin": [
+        [
+          1,
+          2.7489
+        ]
+      ],
+      "subring_widths_tol1e-11": {
+        "1": [
+          1.498010908705661,
+          2.922927624657641,
+          3.5499541348623698,
+          3.9096525680719876,
+          4.174730653176995,
+          4.40478770664212,
+          4.624265331542297,
+          4.842143917300324,
+          5.0527562861809185,
+          5.215073759810352,
+          5.12696389098272,
+          3.472875432102174,
+          0.3814667820079789,
+          0.3517773213492452,
+          0.30155260976821857,
+          0.23757003439549204,
+          0.19901175903896062,
+          0.17502702350085422,
+          0.15991451047481986,
+          0.15100960288275678,
+          0.14755053125240236,
+          0.15106481771258418,
+          0.1705098267938685,
+          0.28297429054205875
+        ],
+        "2": [
+          0.04631424330953892,
+          0.07785529859724204,
+          0.092840048030284,
+          0.10362883903268603,
+          0.11421109530143658,
+          0.12659819485025414,
+          0.1426978665266172,
+          0.16528663406812205,
+          0.19923094733173086,
+          0.25259692183324445,
+          0.2804493998420865,
+          0.20369876765056016,
+          0.027525486764114142,
+          0.04884154853020118,
+          0.037564864442656276,
+          0.021857176619600075,
+          0.014445284065569108,
+          0.010657086584064945,
+          0.008553338092451401,
+          0.007344490232835899,
+          0.006699638378755867,
+          0.0065350048970658214,
+          0.007131162509204091,
+          0.011395441395310344
+        ],
+        "3": [
+          0.0019709917113046593,
+          0.0033272386573846018,
+          0.00407348234236382,
+          0.004759074488727589,
+          0.005612446924209369,
+          0.0068419903886005615,
+          0.008788410805719682,
+          0.012164451535777497,
+          0.01867524213746963,
+          0.0323653571212854,
+          0.040637030857752166,
+          0.014624192950102529,
+          0.0016184965660617223,
+          0.007739918190813988,
+          0.005570150860687572,
+          0.0022766612790019462,
+          0.0011494506973153131,
+          0.0006973923657498382,
+          0.00048579416447358525,
+          0.0003763655917157216,
+          0.00031902361843494376,
+          0.00029588791722234825,
+          0.00031256146833813503,
+          0.0004918686184427479
+        ]
+      },
+      "subring_ratio_median": {
+        "w2/w1": 0.0443326652495867,
+        "w3/w2": 0.057797891001109686
+      },
+      "e_minus_pi": 0.04321391826377226,
+      "out_of_gamut_values_clamped": 2150245,
+      "planck_xy": {
+        "2000": [
+          0.52668,
+          0.4133
+        ],
+        "2856": [
+          0.44754,
+          0.40743
+        ],
+        "3500": [
+          0.4053,
+          0.39072
+        ],
+        "4500": [
+          0.36079,
+          0.36354
+        ],
+        "5500": [
+          0.33243,
+          0.34104
+        ],
+        "6500": [
+          0.31353,
+          0.32363
+        ],
+        "8000": [
+          0.29519,
+          0.30477
+        ],
+        "10000": [
+          0.28063,
+          0.28829
+        ],
+        "15000": [
+          0.26371,
+          0.26728
+        ],
+        "20000": [
+          0.25646,
+          0.25763
+        ]
+      },
+      "build_seconds": {
+        "image": 39.49398875236511,
+        "ring_atlas": 131.30188417434692
+      }
+    }
+  ],
+  "witnesses": [
+    {
+      "id": "unresolved rays",
+      "pass": true,
+      "observed": 0.0,
+      "limit": 0.0,
+      "rule": "at most"
+    },
+    {
+      "id": "separated null constraint normalized residual",
+      "pass": true,
+      "observed": 2.48761864440894e-08,
+      "limit": 2e-05,
+      "rule": "at most"
+    },
+    {
+      "id": "analytic critical curve max deviation of the bisected shadow edge (M)",
+      "pass": true,
+      "observed": 3.2171989450269223e-06,
+      "limit": 0.0002,
+      "rule": "at most"
+    },
+    {
+      "id": "sub-ring width change between integration tolerances 1e-9 and 1e-11 (n = 2, 3; relative)",
+      "pass": true,
+      "observed": 5.040079547952245e-06,
+      "limit": 0.001,
+      "rule": "at most"
+    },
+    {
+      "id": "Planckian chromaticity vs Kang et al. 2002, max xy distance (2000 to 20000 K)",
+      "pass": true,
+      "observed": 0.00047139503892415296,
+      "limit": 0.003,
+      "rule": "at most"
+    },
+    {
+      "id": "Illuminant A (2856 K blackbody) chromaticity vs the CIE published value, xy distance",
+      "pass": true,
+      "observed": 4.1064041721892744e-05,
+      "limit": 0.0002,
+      "rule": "at most"
+    },
+    {
+      "id": "radiance encoding clipping",
+      "pass": true,
+      "observed": 0.0,
+      "limit": 0.0,
+      "rule": "at most"
+    }
+  ],
+  "builder_sha256": "ac4cb2e666dc7e3777c7f8137238fc51957de6a501f07f31eb721b8c87da2389",
+  "runtime": {
+    "python": "3.13.2",
+    "numpy": "2.4.2"
+  }
+}

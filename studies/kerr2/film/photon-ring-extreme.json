@@ -1,0 +1,20 @@
+{
+  "schema": "kerr2.film/1",
+  "case": "kerr2/extreme",
+  "case_manifest_sha256": "e3636a2001fd460794f2127ba8182020d881c5c3a298ee55dc780ede6ab9d4e7",
+  "film": "photon-ring-extreme.mp4",
+  "sha256": "068d88c10d2f73f16d85c9b41ac311ffb8668bee68f689d6944f90fc0d6916ef",
+  "bytes": 1396140,
+  "frames": 480,
+  "fps": 30,
+  "size": [
+    1280,
+    720
+  ],
+  "supersampling": "2x2 per pixel",
+  "target_psi": 3.141592653589793,
+  "zoom_end": 12000.0,
+  "exposure": 1.2,
+  "renderer": "tools/film.py (numpy resampling of the verified PNG payloads)",
+  "scope": "Tier C film from computed rays only; no new rays traced, no interpolation in time beyond camera motion."
+}

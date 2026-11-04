@@ -1,0 +1,353 @@
+{
+  "schema": "loom.scientific-case/1",
+  "id": "kerr2/schwarzschild",
+  "kind": "kerr2",
+  "name": "schwarzschild",
+  "title": "Schwarzschild reference ring",
+  "equation": "null Kerr geodesics in Mino time (u = 1/r, z = cos theta); optically thin equatorial disk, every crossing kept",
+  "domain": {
+    "shape": [
+      1600,
+      1000
+    ],
+    "units": "G=M=c=1; screen impact coordinates in GM/c^2",
+    "boundary": "observer at r = 200; disk rin = ISCO to rout = 22"
+  },
+  "parameters": {
+    "spin": 0.0,
+    "inclination_degrees": 60.0,
+    "isco": 6.0,
+    "outer_disk": 22.0,
+    "observer_r": 200.0,
+    "screen_width": 36.0,
+    "tolerance": 1e-09,
+    "crossings_recorded": 4,
+    "display_temperature_K": 6500.0,
+    "layer_weight": 0.25
+  },
+  "display": {
+    "color": "blackbody at g T(r) through the CIE 1931 2-degree table, linear sRGB (D65 primaries), RGBM16",
+    "cie_table": {
+      "file": "sources/CIE_xyz_1931_2deg.csv",
+      "sha256": "fa663e3535a7e0763a745993a1f0a192eb0275ac46ad2d1befd7626841e713c1",
+      "doi": "10.25039/CIE.DS.xvudnb9b",
+      "licence": "CC BY-SA 4.0"
+    },
+    "geometry": "geometry.json",
+    "probe": "image.f32"
+  },
+  "limits": [
+    "Optically thin equatorial emission with a constant layer weight; no absorption, scattering, polarization or GRMHD.",
+    "Display temperature scale is authored (6,500 K peak); real accretion disks are far hotter; colour is bound to g, the scale is not.",
+    "Crossings beyond n = 3 are not traced (their contribution is below e^-4pi of n = 0).",
+    "The ring atlas is sampled; display interpolation between samples is not a computed ray.",
+    "Observer at finite r = 200 with impact-parameter screen, as in the Scientific Loom."
+  ],
+  "frames": [
+    {
+      "file": "cases/schwarzschild/image-n0.png",
+      "sha256": "4ffabe8b99303dad8bca4e76450c3a4875b963329ae29351d25ee6091d58179e",
+      "bytes": 508600,
+      "encoding": "linear RGBM; multiplier 16",
+      "time": 0,
+      "clipped_values": 0,
+      "layer": 0,
+      "kind": "image"
+    },
+    {
+      "file": "cases/schwarzschild/image-n1.png",
+      "sha256": "a84191611c734fc2c168842af23f6c2fc47ec6eedb99edef260850455ac8532e",
+      "bytes": 90228,
+      "encoding": "linear RGBM; multiplier 16",
+      "time": 0,
+      "clipped_values": 0,
+      "layer": 1,
+      "kind": "image"
+    },
+    {
+      "file": "cases/schwarzschild/image-n2.png",
+      "sha256": "9c1c81f8ec383c7a1f1efa99710ce56781cef06f64a80d7381a66d7587535db9",
+      "bytes": 17239,
+      "encoding": "linear RGBM; multiplier 16",
+      "time": 0,
+      "clipped_values": 0,
+      "layer": 2,
+      "kind": "image"
+    },
+    {
+      "file": "cases/schwarzschild/image-n3.png",
+      "sha256": "03e3f6ef130fcf6107c97b5d872d2b0b09765f4b46c873412092ef5162a2d7ab",
+      "bytes": 8979,
+      "encoding": "linear RGBM; multiplier 16",
+      "time": 0,
+      "clipped_values": 0,
+      "layer": 3,
+      "kind": "image"
+    },
+    {
+      "file": "cases/schwarzschild/ring-n0.png",
+      "sha256": "38750f9cd334ffa83cf9aa002c74030ca185cb01867e31aa8f9675692b6ec752",
+      "bytes": 124935,
+      "encoding": "linear RGBM; multiplier 16",
+      "time": 0,
+      "clipped_values": 0,
+      "layer": 0,
+      "kind": "ring"
+    },
+    {
+      "file": "cases/schwarzschild/ring-n1.png",
+      "sha256": "b6ef083a43c0d73210fe8083649efbe46476d5bd33726c873a6c56ee369fdf22",
+      "bytes": 53976,
+      "encoding": "linear RGBM; multiplier 16",
+      "time": 0,
+      "clipped_values": 0,
+      "layer": 1,
+      "kind": "ring"
+    },
+    {
+      "file": "cases/schwarzschild/ring-n2.png",
+      "sha256": "9f4a74317896063f2b2cf397a19a6747fe96f5ed6d0a66140756cbfca4c24f17",
+      "bytes": 53202,
+      "encoding": "linear RGBM; multiplier 16",
+      "time": 0,
+      "clipped_values": 0,
+      "layer": 2,
+      "kind": "ring"
+    },
+    {
+      "file": "cases/schwarzschild/ring-n3.png",
+      "sha256": "65da8341b3ff463c760dcbdb42f44ecb6451cf7faebdc310f4f4224859aaffe6",
+      "bytes": 53416,
+      "encoding": "linear RGBM; multiplier 16",
+      "time": 0,
+      "clipped_values": 0,
+      "layer": 3,
+      "kind": "ring"
+    },
+    {
+      "file": "cases/schwarzschild/curve.png",
+      "sha256": "947b313923e188a28350e0c51af971af180882c2e7f01bb1da28b65609d02b73",
+      "bytes": 95,
+      "kind": "curve",
+      "encoding": "rho_c(psi)/16 M as 24-bit RGB, psi = (k+0.5) 2pi/npsi",
+      "time": 0,
+      "clipped_values": 0
+    }
+  ],
+  "metrics": [
+    {
+      "time": 0,
+      "a": 0.0,
+      "inclination_degrees": 60.0,
+      "isco": 6.0,
+      "disk_rays_n0": 1300808,
+      "captured_pixels": 167542,
+      "crossing_cap_pixels": 124,
+      "max_constraint": 1.558454587602398e-09,
+      "edge_unresolved_bisections": 0,
+      "edge_deviation_median": 4.023497091054651e-10,
+      "subring_width_median": {
+        "1": 0.4110748737323449,
+        "2": 0.013090966522820935,
+        "3": 0.0005553627188219501
+      },
+      "n1_unbounded_angles": 0,
+      "subrings_reaching_curve_although_rph_below_rin": [],
+      "subring_widths_tol1e-11": {
+        "1": [
+          0.5241763212951955,
+          0.8644526877044809,
+          1.206982639951881,
+          1.4728610611634414,
+          1.6448656801608017,
+          1.7280456104253363,
+          1.7280456104253363,
+          1.6448656801608017,
+          1.4728610611634427,
+          1.2069826399518782,
+          0.8644526877044818,
+          0.5241763212951955,
+          0.2979734261694942,
+          0.19347383916217256,
+          0.1492404257534617,
+          0.128969678841564,
+          0.11922220183683409,
+          0.11516648721095372,
+          0.11516648721095459,
+          0.11922220183683586,
+          0.12896967884156307,
+          0.14924042575346347,
+          0.19347383916217173,
+          0.2979734261694943
+        ],
+        "2": [
+          0.016000802222520427,
+          0.023203643451204854,
+          0.0293080588989838,
+          0.0335284666354667,
+          0.03608033113949372,
+          0.0372725208923539,
+          0.0372725208923539,
+          0.0360803311394937,
+          0.033528466635466714,
+          0.029308058898982917,
+          0.023203643451205742,
+          0.016000802222521315,
+          0.010181130823121443,
+          0.007052098429087829,
+          0.0056112793830021,
+          0.004923273806052287,
+          0.004585641826575504,
+          0.0044438009787297625,
+          0.004443800978728874,
+          0.004585641826574616,
+          0.004923273806051399,
+          0.005611279383001212,
+          0.007052098429087828,
+          0.01018113082312144
+        ],
+        "3": [
+          0.0006769612866399656,
+          0.0009737195467005579,
+          0.0012217909721723432,
+          0.0013915540467914767,
+          0.0014935323679550194,
+          0.0015410057350067061,
+          0.0015410057350067061,
+          0.0014935323679559076,
+          0.0013915540467914767,
+          0.0012217909721732312,
+          0.0009737195466987816,
+          0.0006769612866399656,
+          0.00043376415100393473,
+          0.0003016472097270295,
+          0.00024047304646312997,
+          0.00021118362246319577,
+          0.0001967912687916851,
+          0.0001907412278621123,
+          0.00019074122786300052,
+          0.0001967912687925733,
+          0.00021118362246319577,
+          0.00024047304646224174,
+          0.00030164720972614145,
+          0.00043376415100393473
+        ]
+      },
+      "subring_ratio_median": {
+        "w2/w1": 0.03234676296568989,
+        "w3/w2": 0.04245633578864065
+      },
+      "e_minus_pi": 0.04321391826377226,
+      "out_of_gamut_values_clamped": 6991,
+      "planck_xy": {
+        "2000": [
+          0.52668,
+          0.4133
+        ],
+        "2856": [
+          0.44754,
+          0.40743
+        ],
+        "3500": [
+          0.4053,
+          0.39072
+        ],
+        "4500": [
+          0.36079,
+          0.36354
+        ],
+        "5500": [
+          0.33243,
+          0.34104
+        ],
+        "6500": [
+          0.31353,
+          0.32363
+        ],
+        "8000": [
+          0.29519,
+          0.30477
+        ],
+        "10000": [
+          0.28063,
+          0.28829
+        ],
+        "15000": [
+          0.26371,
+          0.26728
+        ],
+        "20000": [
+          0.25646,
+          0.25763
+        ]
+      },
+      "build_seconds": {
+        "image": 41.29068112373352,
+        "ring_atlas": 125.44117498397827
+      }
+    }
+  ],
+  "witnesses": [
+    {
+      "id": "unresolved rays",
+      "pass": true,
+      "observed": 0.0,
+      "limit": 0.0,
+      "rule": "at most"
+    },
+    {
+      "id": "separated null constraint normalized residual",
+      "pass": true,
+      "observed": 1.558454587602398e-09,
+      "limit": 2e-05,
+      "rule": "at most"
+    },
+    {
+      "id": "analytic critical curve max deviation of the bisected shadow edge (M)",
+      "pass": true,
+      "observed": 4.023505981512465e-10,
+      "limit": 0.0002,
+      "rule": "at most"
+    },
+    {
+      "id": "sub-ring width change between integration tolerances 1e-9 and 1e-11 (n = 2, 3; relative)",
+      "pass": true,
+      "observed": 1.0393830191861412e-08,
+      "limit": 0.001,
+      "rule": "at most"
+    },
+    {
+      "id": "Schwarzschild sub-ring demagnification w3/w2 vs e^-pi, max relative error",
+      "pass": true,
+      "observed": 0.04326460337552385,
+      "limit": 0.15,
+      "rule": "at most"
+    },
+    {
+      "id": "Planckian chromaticity vs Kang et al. 2002, max xy distance (2000 to 20000 K)",
+      "pass": true,
+      "observed": 0.00047139503892415296,
+      "limit": 0.003,
+      "rule": "at most"
+    },
+    {
+      "id": "Illuminant A (2856 K blackbody) chromaticity vs the CIE published value, xy distance",
+      "pass": true,
+      "observed": 4.1064041721892744e-05,
+      "limit": 0.0002,
+      "rule": "at most"
+    },
+    {
+      "id": "radiance encoding clipping",
+      "pass": true,
+      "observed": 0.0,
+      "limit": 0.0,
+      "rule": "at most"
+    }
+  ],
+  "builder_sha256": "ac4cb2e666dc7e3777c7f8137238fc51957de6a501f07f31eb721b8c87da2389",
+  "runtime": {
+    "python": "3.13.2",
+    "numpy": "2.4.2"
+  }
+}

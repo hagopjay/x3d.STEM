@@ -1,0 +1,56 @@
+{
+  "schema": "kerr2.history/1",
+  "note": "First full run, 4 Nov: colour witness red (analytic CIE fit, 0.0036 > 0.003 declared). Kept unchanged as evidence; superseded by the run using the official CIE 1931 table.",
+  "witnesses": [
+    {
+      "id": "unresolved rays",
+      "pass": true,
+      "observed": 0.0,
+      "limit": 0.0,
+      "rule": "at most"
+    },
+    {
+      "id": "separated null constraint normalized residual",
+      "pass": true,
+      "observed": 2.622573935795458e-09,
+      "limit": 2e-05,
+      "rule": "at most"
+    },
+    {
+      "id": "analytic critical curve max deviation of the bisected shadow edge (M)",
+      "pass": true,
+      "observed": 7.386780076501509e-10,
+      "limit": 0.0002,
+      "rule": "at most"
+    },
+    {
+      "id": "sub-ring width change between integration tolerances 1e-9 and 1e-11 (n = 2, 3; relative)",
+      "pass": true,
+      "observed": 1.0423033086087493e-08,
+      "limit": 0.001,
+      "rule": "at most"
+    },
+    {
+      "id": "Schwarzschild sub-ring demagnification w3/w2 vs e^-pi, max relative error",
+      "pass": true,
+      "observed": 0.04326460336261895,
+      "limit": 0.15,
+      "rule": "at most"
+    },
+    {
+      "id": "Planckian chromaticity vs Kang et al. 2002, max xy distance (2000 to 20000 K)",
+      "pass": false,
+      "observed": 0.003600811538978871,
+      "limit": 0.003,
+      "rule": "at most"
+    },
+    {
+      "id": "radiance encoding clipping",
+      "pass": true,
+      "observed": 0.0,
+      "limit": 0.0,
+      "rule": "at most"
+    }
+  ],
+  "builder_sha256": "0b5e7f04e984309faf3beae2b51e56dc36f66b4bf5e7a06ddffbe742ce2e3c18"
+}

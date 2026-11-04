@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kerr 2 · The Photon Ring</title>
+<link rel="stylesheet" href="vendor/x_ite/x_ite.css">
+<link rel="stylesheet" href="src/app.css">
+<script src="vendor/x_ite/x_ite.min.js"></script>
+</head>
+<body>
+<header>
+  <div class="brand"><span class="mark">✶</span><div><b>x3d.STEM</b><small>Kerr 2 · The Photon Ring</small></div></div>
+  <nav id="cases" aria-label="Computed cases"></nav>
+  <a class="ledger-link" href="#ledger">Evidence ledger ↓</a>
+</header>
+<main>
+  <section id="stage">
+    <x3d-canvas id="canvas" contentScale="1" splashScreen="false" contextMenu="false" notifications="false" colorSpace="LINEAR" toneMapping="NONE" maximumFrameRate="60"></x3d-canvas>
+    <div id="banner" hidden></div>
+    <div id="caption"><h1 id="title">Loading…</h1><p id="subtitle"></p></div>
+    <div id="readout">Drag to pan · scroll to zoom into the ring · double-click to reset</div>
+    <div id="scale"><i></i><span id="scaleLabel"></span></div>
+    <div id="loading">Verifying computed rays…</div>
+  </section>
+  <aside id="panel">
+    <h2>View</h2>
+    <div class="row seg" id="views">
+      <button data-view="0" class="on">Sky</button><button data-view="1">Unrolled ring</button>
+    </div>
+    <h2>Images of the disk</h2>
+    <p class="hint">Each layer is one more pass of light around the hole before it reaches you. Every layer is ten to twenty times thinner than the last.</p>
+    <div class="row seg" id="layers">
+      <button data-bit="1" class="on">n = 0 direct</button><button data-bit="2" class="on">n = 1</button>
+      <button data-bit="4" class="on">n = 2</button><button data-bit="8" class="on">n = 3</button>
+    </div>
+    <div class="row"><button id="ringsOnly">Rings only</button><button id="allLayers">All</button><label class="check"><input type="checkbox" id="curve"> Analytic critical curve</label></div>
+    <h2>Exposure <span id="expVal">1.2</span></h2>
+    <input type="range" id="exposure" min="0.2" max="6" step="0.05" value="1.2">
+    <h2>Pixel sampling</h2>
+    <div class="row seg" id="quality"><button data-s="1">1 ray</button><button data-s="4" class="on">4</button><button data-s="16">16</button></div>
+    <h2>Journey</h2>
+    <div class="row"><button id="fly" class="primary">Fly into the photon ring</button><button id="reset">Reset</button></div>
+    <p class="hint" id="flyHint">Zooms into the ring on its brightest side, past the n = 1 and n = 2 sub-rings, to where the computed rays end.</p>
+    <h2 id="ledger">Evidence ledger</h2>
+    <p class="hint">Every number below was measured by a named tool on this case. Red rows stay red.</p>
+    <table id="witnesses"><thead><tr><th></th><th>Check</th><th>Observed</th><th>Limit</th></tr></thead><tbody></tbody></table>
+    <p class="hint" id="limits"></p>
+    <p class="hint small" id="provenance"></p>
+  </aside>
+</main>
+<script src="src/app.js"></script>
+</body>
+</html>

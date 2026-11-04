@@ -1,0 +1,13 @@
+{
+  "center_alpha": 1.9897385922856734,
+  "npsi": 2048,
+  "ndelta": 1024,
+  "delta_min": 1e-06,
+  "delta_max": 1.5,
+  "delta_layout": "first half: -1.5..-1e-6 (geometric, mirrored); second half: +1e-6..+1.5 (geometric)",
+  "span": 36.0,
+  "width": 1600,
+  "height": 1000,
+  "rin": 2.023593104700402,
+  "rout": 22.0
+}
