@@ -151,6 +151,20 @@ class NoStdlibShadowing(unittest.TestCase):
         self.assertEqual(bad, [])
 
 
+class SharedJavaScript(unittest.TestCase):
+    # Studies serve only their own folder, so they carry copies of lib/stemkit/js; a copy that drifts from
+    # the library would mesh differently from the Python reference. Pinned copies are listed with a reason.
+    PINNED = {"studies/turing-garden/src/nets.js": "accepted 4 Nov before the library copy existed; migrate in its next pass"}
+
+    def test_study_copies_match_the_library(self):
+        from pathlib import Path
+        repo = Path(__file__).resolve().parents[3]
+        lib = (repo / "lib/stemkit/js/nets.js").read_bytes()
+        copies = [p for p in repo.glob("studies/*/src/nets.js") if str(p.relative_to(repo)) not in self.PINNED]
+        self.assertTrue(copies)
+        self.assertEqual([str(p.relative_to(repo)) for p in copies if p.read_bytes() != lib], [])
+
+
 class FailClosed(unittest.TestCase):
     def test_witness_is_not_an_assert(self):
         self.assertFalse(witness("x", 2.0, 1.0)["pass"])
