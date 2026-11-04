@@ -11,6 +11,7 @@ x3d.STEM is built with the X3D Loom: generators instead of hand-edited files, in
 | [Kerr 2 · The Photon Ring](studies/kerr2/) | A black hole's photon ring with every pass of light kept as its own layer, zoomable 20,000× into the sub-rings, colour bound to the frequency shift, checked against Bardeen's analytic critical curve and the e^−π sub-ring law | Flagship 1, pass 1 |
 | [Turing Garden](studies/turing-garden/) | Five 3D reaction–diffusion gardens (spots, Swiss cheese, coral, sheets, chaos) grown from three seeds; the browser meshes each verified field, checks its mesh against the builder's, and plays the growth through X3D's own TimeSensor route | Flagship 2, pass 1 |
 | [Electron Cloud Observatory](studies/electron-cloud/) | Hydrogen solved numerically and held to the exact answers: ten orbitals from 1s to 5g coloured by the sign of the wave, and Lyman-α, a superposition whose charge swings through the nucleus at the frequency of hydrogen's 121.5 nm line | Flagship 3, pass 1 |
+| [Chirp](studies/chirp/) | Two black holes spiral together and you hear them: the orbit integrated with radiation reaction and held to Peters' laws and the chirp law, the wave pattern spreading across the orbital plane, and the strain played at its real pitch (or three octaves up), picture locked to the sound | Flagship 4, pass 1 |
 | Scientific Loom Observatory, pass 1 | Quantum vortices, Kerr lensing, phase separation, phononic modes (the first delivery; reviewed in the Loom's REVIEW-scientific.md) | Lives outside this repo for now |
 
 ## Shared library
@@ -23,7 +24,7 @@ python3 -E -s -m unittest discover -s lib/stemkit/tests -t lib      # and again 
 
 ## Payloads
 
-Case payloads (PNGs, fields, films) are not committed: about 330 MB for Kerr 2, 43 MB for the Turing Garden and 7 MB for the Electron Cloud. Each study's builder regenerates them, and the committed manifests carry their sha256, so a rebuilt payload either matches or the Loom's science gate rejects it.
+Case payloads (PNGs, fields, films) are not committed: about 330 MB for Kerr 2, 43 MB for the Turing Garden, 7 MB for the Electron Cloud and 4 MB for Chirp. Each study's builder regenerates them, and the committed manifests carry their sha256, so a rebuilt payload either matches or the Loom's science gate rejects it.
 
 ## Principles
 

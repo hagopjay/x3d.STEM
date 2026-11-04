@@ -10,3 +10,4 @@ studies/*/cases/*/*.f32
 studies/*/film/*.mp4
 studies/*/film/.frames-*/
 **/__pycache__/
+studies/*/cases/*/*.wav
