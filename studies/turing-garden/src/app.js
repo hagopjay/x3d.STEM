@@ -264,7 +264,6 @@ function wire() {
   $("cut").oninput = (e) => { state.cut = +e.target.value; applyCut(); };
   for (const b of $("colours").children) b.onclick = () => setColour(b.dataset.c);
   for (const b of $("lenses").children) b.onclick = () => setLens(b.dataset.l);
-  addEventListener("hashchange", () => route().catch(fail));
   addEventListener("keydown", (e) => { if (e.key === "u" || e.key === "U") document.body.classList.toggle("hide"); if (e.key === " ") { e.preventDefault(); $("play").onclick(); } });
 }
 
@@ -276,6 +275,10 @@ async function main() {
   scene = B.currentScene;
   nodes = { garden: scene.getNamedNode("Garden"), clock: scene.getNamedNode("Clock"), frames: scene.getNamedNode("Frames"), cut: scene.getNamedNode("Cut") };
   nodes.frames.addFieldCallback("ui", "value_changed", (v) => { if (state.playing && state.case) showFrame(v); });
+  // Only now may navigation load cases: a hash change during scene loading reached load() with no scene
+  // (Loom failure mode 78, found on the Electron Cloud page; fixed here 5 Nov).
+  addEventListener("hashchange", () => route().catch(fail));
   await route();
+  if (parseHash().id && parseHash().id !== state.id) await route();   // a hash that changed while loading
 }
 main().catch(fail);

@@ -21,7 +21,9 @@ ev = {"schema": "turing-garden.browser/1", "date": datetime.date.today().isoform
                    "pass": all(a == b for a, b in s) and all(s[i + 1][0] > s[i][0] for i in range(len(s) - 1)) and r["playback"]["paused_then"][0] == r["playback"]["paused_then"][1]},
       "console_errors": r["errors"],
       "scope": "One browser on one machine. Counts and volumes, not pixels: no frame is compared with an offline render, and no frame rate is claimed."}
-ev["pass"] = ev["mesh_cross_check"]["pass"] and ev["playback"]["pass"] and not r["errors"]
+if "race" in r:   # a case change while the scene loads must land on the new case without an error (failure mode 78)
+    ev["navigation_during_load"] = {**r["race"], "pass": r["race"]["landed"] == "coral" and r["race"]["loadingText"] == "hidden" and not r["race"]["errors"]}
+ev["pass"] = ev["mesh_cross_check"]["pass"] and ev["playback"]["pass"] and not r["errors"] and ev.get("navigation_during_load", {"pass": True})["pass"]
 out = ROOT / "evidence" / f"browser-{ev['date']}.json"
 out.write_text(json.dumps(ev, indent=2) + "\n")
 print(out.name, "pass" if ev["pass"] else "FAIL")

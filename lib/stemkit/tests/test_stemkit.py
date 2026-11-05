@@ -154,7 +154,7 @@ class NoStdlibShadowing(unittest.TestCase):
 class SharedJavaScript(unittest.TestCase):
     # Studies serve only their own folder, so they carry copies of lib/stemkit/js; a copy that drifts from
     # the library would mesh differently from the Python reference. Pinned copies are listed with a reason.
-    PINNED = {"studies/turing-garden/src/nets.js": "accepted 4 Nov before the library copy existed; migrate in its next pass"}
+    PINNED: dict = {}
 
     def test_study_copies_match_the_library(self):
         from pathlib import Path

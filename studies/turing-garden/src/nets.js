@@ -1,4 +1,5 @@
-/* Surface nets in the browser: a line-for-line port of lib/stemkit/mesh.py (surface_nets with two Newton
+/* stemkit/js/nets.js (copied into each study's src/; tests keep the copies identical).
+   Surface nets in the browser: a line-for-line port of lib/stemkit/mesh.py (surface_nets with two Newton
    projections, trilinear sampling, numpy-style gradients, vertex normals). The page meshes the verified
    fields itself and compares its vertex and triangle counts and enclosed volume with the builder's, frame by
    frame, so a porting slip shows up as a red row instead of a slightly wrong garden. */
@@ -13,12 +14,14 @@ const Nets = (() => {
     if (d === 1) EDGES.push([a, b]);
   }
 
-  /* Pad an n^3 field of quantized values with one layer of 0, as (q / top) * vmax in float64. */
-  function displayField(q, n, top, vmax) {
+  /* Pad an n^3 field of quantized values with one layer of 0, as (q / top) * vmax in float64. With abs, the
+     magnitude |q| is used (signed fields are meshed by magnitude; the sign is read separately for colour),
+     exactly as the Python builders do: pad(abs(q) / top * vmax). */
+  function displayField(q, n, top, vmax, abs = false) {
     const m = n + 2, f = new Float64Array(m * m * m);
     for (let x = 0; x < n; x++) for (let y = 0; y < n; y++) {
       const src = (x * n + y) * n, dst = ((x + 1) * m + (y + 1)) * m + 1;
-      for (let z = 0; z < n; z++) f[dst + z] = (q[src + z] / top) * vmax;
+      for (let z = 0; z < n; z++) f[dst + z] = ((abs ? Math.abs(q[src + z]) : q[src + z]) / top) * vmax;
     }
     return { f, shape: [m, m, m] };
   }

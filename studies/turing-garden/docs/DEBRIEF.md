@@ -35,6 +35,8 @@ Fourteen per settled garden and twelve for the restless one, 68 in all, every on
 7. **Plain surface nets shrink convex shapes (C).** Against an exact sphere and torus the volume came out 0.97 % and 1.99 % small. Most of this is expected: the trilinear interpolant of a convex distance field lies inside it, and a polyhedron with vertices on a convex surface is inscribed. The stemkit tests now hold these as characterization bounds, and the study's volume witness is labelled a gross-error check.
 8. **Playback froze silently (C).** X_ITE 16.5.1 has no `Browser.currentTime`, so the TimeSensor's start time was NaN. It reported itself active and sent no events. The page now uses `getCurrentTime()` and refuses a non-finite start.
 
+9. **A loading race, found on a later page (C, fixed 5 Nov).** A case change that arrived while the X3D scene was still loading reached the loader before the scene existed (Loom failure mode 78, first seen on the Electron Cloud page). Navigation is now wired only once the scene is ready; the browser evidence reproduces the race and must land on the new case. The page's mesher was also synced to the shared `lib/stemkit/js/nets.js` (identical output for these unsigned fields).
+
 ## 4. Limits (also in every case manifest)
 
 A nondimensional model on a 64-cell periodic box: no real chemistry, and patterns a few wavelengths across. Forward Euler is first order in time; the restless garden's details depend on dt and on rounding, so only its statistics are claims. The skin is the level v = 0.2 of the published field. The box walls are cut faces, not physics, and pieces and holes are counted in the box as shown, not periodically. Browser observations are from a headless Chromium on one machine; no frame rate is claimed.
