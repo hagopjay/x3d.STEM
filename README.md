@@ -12,6 +12,7 @@ x3d.STEM is built with the X3D Loom: generators instead of hand-edited files, in
 | [Turing Garden](studies/turing-garden/) | Five 3D reaction–diffusion gardens (spots, Swiss cheese, coral, sheets, chaos) grown from three seeds; the browser meshes each verified field, checks its mesh against the builder's, and plays the growth through X3D's own TimeSensor route | Flagship 2, pass 1 |
 | [Electron Cloud Observatory](studies/electron-cloud/) | Hydrogen solved numerically and held to the exact answers: ten orbitals from 1s to 5g coloured by the sign of the wave, and Lyman-α, a superposition whose charge swings through the nucleus at the frequency of hydrogen's 121.5 nm line | Flagship 3, pass 1 |
 | [Chirp](studies/chirp/) | Two black holes spiral together and you hear them: the orbit integrated with radiation reaction and held to Peters' laws and the chirp law, the wave pattern spreading across the orbital plane, and the strain played at its real pitch (or three octaves up), picture locked to the sound | Flagship 4, pass 1 |
+| [Living Heart](studies/living-heart/) | Electrical waves in heart muscle: paced tissue, a spiral wave (re-entry) and a scroll wave in a ventricle wall, held to the exact Nagumo front speed; the page checks every frame against the builder | Flagship 5, pass 1 |
 | Scientific Loom Observatory, pass 1 | Quantum vortices, Kerr lensing, phase separation, phononic modes (the first delivery; reviewed in the Loom's REVIEW-scientific.md) | Lives outside this repo for now |
 
 ## Shared library
