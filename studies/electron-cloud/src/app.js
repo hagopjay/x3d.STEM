@@ -100,7 +100,7 @@ function showFrame(i) {
   const c = state.case, f = c.frames[i], P = c.parameters;
   if (state.q.length > 1) {
     $("tval").textContent = `t = ${(f.time * 2.4188843265857e-2).toFixed(3)} fs`;
-    nodes.charge.translation = new X3D.SFVec3f(C, C, f.charge_centre_z_bohr / P.cell_bohr + C);
+  nodes.charge.translation = new X3D.SFVec3f(C, C, f.charge_centre_z_bohr / P.cell_bohr + C);
   } else $("tval").textContent = `E = ${P.E_eV.toFixed(4)} eV`;
   $("fval").textContent = frameLabel() || `box ${(2 * P.box_half_width_bohr).toFixed(1)} bohr across`;
 }
@@ -229,15 +229,24 @@ function wire() {
   addEventListener("keydown", (e) => { if (e.key === "u" || e.key === "U") document.body.classList.toggle("hide"); if (e.key === " ") { e.preventDefault(); $("play").onclick(); } });
 }
 
+// A world load gets a time budget: X_ITE's replaceWorld can leave its promise pending if an internal wait
+// rejects (X_ITE teardown F01; Loom failure mode 89), and a page must say so rather than hang.
+function loadWorld(url, ms = 30000) {
+  return Promise.race([B.loadURL(new X3D.MFString(url)),
+    new Promise((_, reject) => setTimeout(() => reject(Error(`the X3D scene did not load within ${ms / 1000} s: ${url}`)), ms))]);
+}
+
 async function main() {
   state.index = (await (await fetch("cases/index.json", { cache: "no-store" })).json()).cases;
   wire();
   B = X3D.getBrowser("#canvas");
-  await B.loadURL(new X3D.MFString("scenes/cloud.x3d"));
+  await loadWorld("scenes/cloud.x3d");
   scene = B.currentScene;
   nodes = { cloud: scene.getNamedNode("Cloud"), clock: scene.getNamedNode("Clock"), frames: scene.getNamedNode("Frames"), cut: scene.getNamedNode("Cut"),
     charge: scene.getNamedNode("Charge"), chargeShown: scene.getNamedNode("ChargeShown") };
-  nodes.frames.addFieldCallback("ui", "value_changed", (v) => { if (state.playing && state.case) showFrame(v); });
+  // Never let an exception escape an X_ITE field callback: one escaping exception freezes every route
+  // in the scene (X_ITE teardown F02, reproduced in 16.5.1; Loom failure mode 88).
+  nodes.frames.addFieldCallback("ui", "value_changed", (v) => { try { if (state.playing && state.case) showFrame(v); } catch (e) { console.error(e); } });
   // Only now may navigation load cases: a hash change during scene loading once reached load() with no scene.
   addEventListener("hashchange", () => route().catch(fail));
   await route();

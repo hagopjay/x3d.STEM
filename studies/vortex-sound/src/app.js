@@ -177,11 +177,18 @@ function wire() {
   addEventListener("keydown", (e) => { if (e.key === "u" || e.key === "U") document.body.classList.toggle("hide"); if (e.key === " ") { e.preventDefault(); $("play").onclick(); } });
 }
 
+// A world load gets a time budget: X_ITE's replaceWorld can leave its promise pending if an internal wait
+// rejects (X_ITE teardown F01; Loom failure mode 89), and a page must say so rather than hang.
+function loadWorld(url, ms = 30000) {
+  return Promise.race([B.loadURL(new X3D.MFString(url)),
+    new Promise((_, reject) => setTimeout(() => reject(Error(`the X3D scene did not load within ${ms / 1000} s: ${url}`)), ms))]);
+}
+
 async function main() {
   state.index = (await (await fetch("cases/index.json", { cache: "no-store" })).json()).cases;
   wire();
   B = X3D.getBrowser("#canvas");
-  await B.loadURL(new X3D.MFString("scenes/vortex.x3d"));
+  await loadWorld("scenes/vortex.x3d");
   scene = B.currentScene;
   nodes = { frames: scene.getNamedNode("Frames"), clock: scene.getNamedNode("Clock"), sequencer: scene.getNamedNode("Sequencer"),
     core: scene.getNamedNode("Core"), sheet: scene.getNamedNode("Sheet") };

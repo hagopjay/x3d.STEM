@@ -142,8 +142,6 @@ function wire() {
   cv.addEventListener("pointerup", () => { drag = null; });
   cv.addEventListener("dblclick", () => $("reset").onclick());
   addEventListener("resize", push);
-  // A hash-only navigation does not reload the page: route it, so the page never shows stale data.
-  addEventListener("hashchange", () => route().catch(fail));
   addEventListener("keydown", (e) => { if (e.key === "u" || e.key === "U") document.body.classList.toggle("hide"), setTimeout(push, 50); if (e.key === "Escape") state.fly = null; });
 }
 
@@ -218,11 +216,22 @@ window.kerr2View = () => {
     dpr: devicePixelRatio, loading: !$("loading").hidden };
 };
 
+// A world load gets a time budget: X_ITE's replaceWorld can leave its promise pending if an internal wait
+// rejects (X_ITE teardown F01; Loom failure mode 89), and a page must say so rather than hang.
+function loadWorld(url, ms = 30000) {
+  return Promise.race([B.loadURL(new X3D.MFString(url)),
+    new Promise((_, reject) => setTimeout(() => reject(Error(`the X3D scene did not load within ${ms / 1000} s: ${url}`)), ms))]);
+}
+
 async function main() {
   wire();
   B = X3D.getBrowser("#canvas");
-  await B.loadURL(new X3D.MFString("scenes/kerr2.x3d"));
+  await loadWorld("scenes/kerr2.x3d");
   scene = B.currentScene; shader = scene.getNamedNode("RingShader");
+  // A hash-only navigation does not reload the page: route it, so the page never shows stale data. Wired only
+  // once the scene is ready (Loom failure mode 78); a hash that changed while loading is routed afterwards.
+  addEventListener("hashchange", () => route().catch(fail));
   await route();
+  if (parseHash().id && parseHash().id !== state.id) await route();
 }
 main().catch(fail);

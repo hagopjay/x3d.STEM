@@ -23,7 +23,10 @@ ev = {"schema": "turing-garden.browser/1", "date": datetime.date.today().isoform
       "scope": "One browser on one machine. Counts and volumes, not pixels: no frame is compared with an offline render, and no frame rate is claimed."}
 if "race" in r:   # a case change while the scene loads must land on the new case without an error (failure mode 78)
     ev["navigation_during_load"] = {**r["race"], "pass": r["race"]["landed"] == "coral" and r["race"]["loadingText"] == "hidden" and not r["race"]["errors"]}
-ev["pass"] = ev["mesh_cross_check"]["pass"] and ev["playback"]["pass"] and not r["errors"] and ev.get("navigation_during_load", {"pass": True})["pass"]
+if "resilience" in r:   # the callback's own function throws once; playback must keep advancing (failure mode 88)
+    rs = r["resilience"]
+    ev["callback_resilience"] = {**rs, "pass": rs["thrown"] >= 1 and rs["advanced_after"] and not rs["uncaught"]}
+ev["pass"] = ev["mesh_cross_check"]["pass"] and ev["playback"]["pass"] and not r["errors"] and ev.get("navigation_during_load", {"pass": True})["pass"] and ev.get("callback_resilience", {"pass": True})["pass"]
 out = ROOT / "evidence" / f"browser-{ev['date']}.json"
 out.write_text(json.dumps(ev, indent=2) + "\n")
 print(out.name, "pass" if ev["pass"] else "FAIL")

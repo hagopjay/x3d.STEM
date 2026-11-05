@@ -253,18 +253,27 @@ function wire() {
   addEventListener("keydown", (e) => { if (e.key === "u" || e.key === "U") document.body.classList.toggle("hide"); });
 }
 
+// A world load gets a time budget: X_ITE's replaceWorld can leave its promise pending if an internal wait
+// rejects (X_ITE teardown F01; Loom failure mode 89), and a page must say so rather than hang.
+function loadWorld(url, ms = 30000) {
+  return Promise.race([B.loadURL(new X3D.MFString(url)),
+    new Promise((_, reject) => setTimeout(() => reject(Error(`the X3D scene did not load within ${ms / 1000} s: ${url}`)), ms))]);
+}
+
 async function main() {
   state.index = (await (await fetch("cases/index.json", { cache: "no-store" })).json()).cases;
   wire();
   B = X3D.getBrowser("#canvas");
-  await B.loadURL(new X3D.MFString("scenes/chirp.x3d"));
+  await loadWorld("scenes/chirp.x3d");
   scene = B.currentScene;
   nodes = { clock: scene.getNamedNode("Clock"), hole1: scene.getNamedNode("Hole1"), hole2: scene.getNamedNode("Hole2"),
     s1: scene.getNamedNode("Hole1Sphere"), s2: scene.getNamedNode("Hole2Sphere"),
     trail1: scene.getNamedNode("Trail1Coord"), trail2: scene.getNamedNode("Trail2Coord") };
   buildRipple();
   nodes.lines1 = scene.getNamedNode("Trail1Lines"); nodes.lines2 = scene.getNamedNode("Trail2Lines");
-  nodes.clock.addFieldCallback("ui", "fraction_changed", (f) => { if (state.case && state.mode) drawAt(f * tEnd()); });
+  // Never let an exception escape an X_ITE field callback: one escaping exception freezes every route
+  // in the scene (X_ITE teardown F02, reproduced in 16.5.1; Loom failure mode 88).
+  nodes.clock.addFieldCallback("ui", "fraction_changed", (f) => { try { if (state.case && state.mode) drawAt(f * tEnd()); } catch (e) { console.error(e); } });
   // Navigation only once the scene is ready (Loom failure mode 78).
   addEventListener("hashchange", () => route().catch(fail));
   await route();

@@ -22,7 +22,10 @@ ev = {"schema": "living-heart.browser/1", "date": datetime.date.today().isoforma
                    "pass": all(a == b for a, b in s) and all(0 < d < 18 for d in steps) and r["playback"]["paused_then"][0] == r["playback"]["paused_then"][1]},
       "console_errors": r["errors"],
       "scope": "One browser on one machine. Counts, mesh and playback order, not pixels; no frame rate is claimed."}
-ev["pass"] = ev["cross_check"]["pass"] and ev["playback"]["pass"] and not r["errors"]
+if "resilience" in r:   # the callback's own function throws once; playback must keep advancing (failure mode 88)
+    rs = r["resilience"]
+    ev["callback_resilience"] = {**rs, "pass": rs["thrown"] >= 1 and rs["advanced_after"] and not rs["uncaught"]}
+ev["pass"] = ev["cross_check"]["pass"] and ev["playback"]["pass"] and not r["errors"] and ev.get("callback_resilience", {"pass": True})["pass"]
 out = ROOT / "evidence" / f"browser-{ev['date']}.json"
 out.write_text(json.dumps(ev, indent=2) + "\n")
 print(out.name, "pass" if ev["pass"] else "FAIL")

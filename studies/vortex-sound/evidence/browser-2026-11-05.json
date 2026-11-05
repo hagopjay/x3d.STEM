@@ -6,7 +6,7 @@
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
   "page_sources": {
     "index.html": "b9228323c7db29b1e2f7509c0b1033f830b3a574150703c02c06e93b5ced7805",
-    "src/app.js": "4161d8bb5917f735b5401a1a56d9d0d4cb4f73106b3877544d5c315135b54aa5",
+    "src/app.js": "ca7b8d6adb1e0b8692430ca766e0d49e8e9a7b5b8b90b4d093fb876ea6dc8699",
     "src/nets.js": "1ada80503f551ac38ca53ef1bbdb5cb61b9dc61609e820785d67156ebcfe4383",
     "src/app.css": "1b8ed41276e27ae339fd693d086115f156409bb21d4715410b6a4289c62ea768",
     "scenes/vortex.x3d": "14c20b0a4796aa96b6ce2c960cad4e25768bdb02d500b84212fb4c64461d982c"
@@ -37,33 +37,44 @@
     "what": "Play the reconnection; sample the page's frame and the Switch's whichChoice every 0.3 s; pause and check it holds",
     "samples_frame_whichChoice": [
       [
-        7,
-        7
+        6,
+        6
+      ],
+      [
+        9,
+        9
       ],
       [
         11,
         11
       ],
       [
-        15,
-        15
+        14,
+        14
       ],
       [
         18,
         18
-      ],
-      [
-        22,
-        22
       ]
     ],
     "paused_then": [
-      22,
-      22
+      20,
+      20
     ],
     "pass": true
   },
   "console_errors": [],
   "scope": "One browser on one machine. Counts, mesh and playback order, not pixels; no frame rate is claimed.",
+  "callback_resilience": {
+    "thrown": 1,
+    "calls": 9,
+    "whichChoice": [
+      28,
+      33
+    ],
+    "advanced_after": true,
+    "uncaught": [],
+    "pass": true
+  },
   "pass": true
 }

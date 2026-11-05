@@ -22,7 +22,10 @@ ev = {"schema": "electron-cloud.browser/1", "date": datetime.date.today().isofor
                            and len({x[2] for x in s}) == len(s) and r["playback"]["paused_then"][0] == r["playback"]["paused_then"][1]},
       "console_errors": r["errors"],
       "scope": "One browser on one machine. Counts and volumes, not pixels: no frame is compared with an offline render, and no frame rate is claimed."}
-ev["pass"] = ev["mesh_cross_check"]["pass"] and ev["playback"]["pass"] and not r["errors"]
+if "resilience" in r:   # the callback's own function throws once; playback must keep advancing (failure mode 88)
+    rs = r["resilience"]
+    ev["callback_resilience"] = {**rs, "pass": rs["thrown"] >= 1 and rs["advanced_after"] and not rs["uncaught"]}
+ev["pass"] = ev["mesh_cross_check"]["pass"] and ev["playback"]["pass"] and not r["errors"] and ev.get("callback_resilience", {"pass": True})["pass"]
 out = ROOT / "evidence" / f"browser-{ev['date']}.json"
 out.write_text(json.dumps(ev, indent=2) + "\n")
 print(out.name, "pass" if ev["pass"] else "FAIL")

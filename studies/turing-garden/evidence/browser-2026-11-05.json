@@ -6,7 +6,7 @@
   "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
   "page_sources": {
     "index.html": "63b0e8861a2e205600a8b08d9c9b561b921a6b4bb2de945f4f216161e369e83c",
-    "src/app.js": "b11f02893b0d0509cb10ba58597eee47843d4d56b35212ca82449de5c40288a3",
+    "src/app.js": "39360c85f339fff02049dbd0aa93712094cfdbb40cd94f735525f242506b60d6",
     "src/nets.js": "1ada80503f551ac38ca53ef1bbdb5cb61b9dc61609e820785d67156ebcfe4383",
     "src/app.css": "d92b4e00ba9c16abc6a9517feaba1679bdf338de87dc4c75d7badc7fd968286f",
     "scenes/garden.x3d": "8cc6bd9e3a54787d48fda9aac3213e50fdbe4a8dc309befa26807d4eb52e9a5c"
@@ -58,29 +58,29 @@
     "what": "Play from frame 0; sample the page's frame and the Switch's whichChoice every 0.6 s; pause and check it holds",
     "samples_frame_whichChoice": [
       [
-        5,
-        5
+        7,
+        7
       ],
       [
-        8,
-        8
+        10,
+        10
       ],
       [
-        11,
-        11
+        13,
+        13
       ],
       [
-        14,
-        14
+        16,
+        16
       ],
       [
-        17,
-        17
+        19,
+        19
       ]
     ],
     "paused_then": [
-      17,
-      17
+      20,
+      20
     ],
     "pass": true
   },
@@ -90,6 +90,17 @@
     "landed": "coral",
     "loadingText": "hidden",
     "errors": [],
+    "pass": true
+  },
+  "callback_resilience": {
+    "thrown": 1,
+    "calls": 10,
+    "whichChoice": [
+      28,
+      33
+    ],
+    "advanced_after": true,
+    "uncaught": [],
     "pass": true
   },
   "pass": true

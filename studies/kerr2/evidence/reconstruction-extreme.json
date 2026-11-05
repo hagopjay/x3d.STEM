@@ -24,11 +24,16 @@
     "hash": "extreme/v=0/z=2/x=2.3549211035719866/y=2.5/m=15/s=16/e=1.2/c=0",
     "page_sources": {
       "index.html": "fddfdb122d44153c741153869d93dde72236679b02e537703906fad4d3f99162",
-      "src/app.js": "8d10148196f4283092fa60cd0dd0c9f5c5ade130303d49ecb0ff0206649c822c",
+      "src/app.js": "db2e2459e1bdd9c98b2b82a1d83c82189d75ce9b528f84af6eeaf2746c10d098",
       "src/app.css": "ce329022438ec37bd7d17544fec2138360dabdeeed19b53978b3621f78e51b2e",
       "shaders/kerr2.frag": "c1a09c53f21368e87832b214a87b4a8c55ef6ab26af4eaec2e1dfacf4ee74190",
       "shaders/screen.vert": "deeb139524e5809634bf1dcb23ca60915b6b26928d8a89656c7ca3f33b4122f6",
       "scenes/kerr2.x3d": "256bb4fc82cadfe27a3f1bd062fa65aa2a6bf0bdea2ad725c1fc4c92894f311e"
+    },
+    "navigation_during_load": {
+      "landed": "kerr",
+      "errors": [],
+      "pass": true
     }
   },
   "capture_sha256": "bc8082a02c6efddef3ae1f0bba9685c23f19397d0210ad858217da6c59709334",

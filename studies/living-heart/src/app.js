@@ -223,14 +223,23 @@ function wire() {
   addEventListener("keydown", (e) => { if (e.key === "u" || e.key === "U") document.body.classList.toggle("hide"); if (e.key === " ") { e.preventDefault(); $("play").onclick(); } });
 }
 
+// A world load gets a time budget: X_ITE's replaceWorld can leave its promise pending if an internal wait
+// rejects (X_ITE teardown F01; Loom failure mode 89), and a page must say so rather than hang.
+function loadWorld(url, ms = 30000) {
+  return Promise.race([B.loadURL(new X3D.MFString(url)),
+    new Promise((_, reject) => setTimeout(() => reject(Error(`the X3D scene did not load within ${ms / 1000} s: ${url}`)), ms))]);
+}
+
 async function main() {
   state.index = (await (await fetch("cases/index.json", { cache: "no-store" })).json()).cases;
   wire();
   B = X3D.getBrowser("#canvas");
-  await B.loadURL(new X3D.MFString("scenes/heart.x3d"));
+  await loadWorld("scenes/heart.x3d");
   scene = B.currentScene;
   nodes = { frames: scene.getNamedNode("Frames"), clock: scene.getNamedNode("Clock"), sequencer: scene.getNamedNode("Sequencer"), cut: scene.getNamedNode("Cut") };
-  nodes.sequencer.addFieldCallback("ui", "value_changed", (v) => { if (state.playing && state.case) showFrame(v); });
+  // Never let an exception escape an X_ITE field callback: one escaping exception freezes every route
+  // in the scene (X_ITE teardown F02, reproduced in 16.5.1; Loom failure mode 88).
+  nodes.sequencer.addFieldCallback("ui", "value_changed", (v) => { try { if (state.playing && state.case) showFrame(v); } catch (e) { console.error(e); } });
   addEventListener("hashchange", () => route().catch(fail));   // only once the scene is ready (Loom failure mode 78)
   await route();
 }
