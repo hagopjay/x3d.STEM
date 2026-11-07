@@ -4,6 +4,10 @@ Science, technology, engineering and maths as X3D worlds that carry their own ev
 
 x3d.STEM is built with the X3D Loom: generators instead of hand-edited files, independent witnesses (including exact analytic references), acceptance profiles that fail closed, receipts, and a flywheel that turns each failure into a rule. Its direction, audiences, fidelity tiers and project catalogue are in [docs/X3D-STEM.md](docs/X3D-STEM.md).
 
+## Live
+
+Every study except Kerr 2 runs on the repo's Pages site: https://hagopjay.github.io/x3d.STEM/ (served from `docs/`, with the payloads rebuilt by each study's builder; the same copies also sit on https://hagopjay.github.io/x3d.demo/). The study table below links the source; the Pages index links the running pages.
+
 ## Studies
 
 | Study | What it shows | State |
@@ -26,7 +30,7 @@ python3 -E -s -m unittest discover -s lib/stemkit/tests -t lib      # and again 
 
 ## Payloads
 
-Case payloads (PNGs, fields, films) are not committed: about 330 MB for Kerr 2, 43 MB for the Turing Garden, 7 MB for the Electron Cloud and 4 MB for Chirp, 2 MB for the Living Heart and 5 MB for the vortex study. Each study's builder regenerates them, and the committed manifests carry their sha256, so a rebuilt payload either matches or the Loom's science gate rejects it.
+Case payloads (PNGs, fields, films) are not committed under `studies/` (the hosted copies under `docs/studies/` are rebuilt ones, added so the Pages site runs): about 330 MB for Kerr 2, 43 MB for the Turing Garden, 7 MB for the Electron Cloud and 4 MB for Chirp, 2 MB for the Living Heart and 5 MB for the vortex study. Each study's builder regenerates them, and the committed manifests carry their sha256, so a rebuilt payload either matches or the Loom's science gate rejects it.
 
 ## Principles
 
@@ -37,4 +41,4 @@ Case payloads (PNGs, fields, films) are not committed: about 330 MB for Kerr 2, 
 
 ## Status
 
-Local repository; no remote yet (to be `hagopjay/x3d.STEM`). Nothing here has been measured on a real GPU.
+Remote: `hagopjay/x3d.STEM`. Nothing here has been measured on a real GPU.
