@@ -1,0 +1,2 @@
+# Pinned upstream validators retain their exact recorded bytes, including whitespace.
+studies/research-loom/vendor/x3d_mcp/** -whitespace

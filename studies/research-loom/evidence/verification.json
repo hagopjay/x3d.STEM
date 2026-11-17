@@ -1,0 +1,276 @@
+{
+  "schema": "stemloom.verification/1",
+  "started_utc": "2026-11-17T19:54:17.790266+00:00",
+  "instrument_sha256": "89477b8bb21a29136d0ae95fdbb02fad97e5dca766a3cbfcbf1b13941c772b8a",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "scope": "Published static geometry and local scientific/transfer checks; no native browser, GPU, Blender execution or external Loom-profile certification.",
+  "controls": {
+    "caught": [
+      "changed-packet-byte",
+      "red-scientific-witness",
+      "inconsistent-witness-boolean",
+      "changed-actual-coordinate-with-unchanged-metadata",
+      "optimized-python-red-gate"
+    ],
+    "count": 5,
+    "asymmetric_signed_volume": 3.9999999999999987,
+    "rotated_signed_volume": 3.9999999999999987,
+    "note": "Coordinate-pair reference is independent of Blender execution."
+  },
+  "status": "pass",
+  "cases": [
+    {
+      "id": "flow-balanced",
+      "frames": 9,
+      "witnesses": 8,
+      "status": "pass",
+      "x3d_max_geometry_difference": 5.551115123125783e-17,
+      "text_hubs": {
+        "display_samples": 4964,
+        "ply_edges": 4846,
+        "polygons": 0,
+        "losses": "OBJ loses appearance and scientific arrays; PLY has RGB8/opacity quantization and loses group identity/units/arrays; CSV is display samples, not source observations."
+      },
+      "science": {
+        "reference": "Scalar Python math trigonometric ABC field",
+        "max_velocity_grid_difference": 0.0
+      },
+      "vtk": {
+        "points": 4964,
+        "max_position_difference": 0.0,
+        "max_rgba_quantization_difference": 0.001960593504474639,
+        "scientific_arrays": []
+      }
+    },
+    {
+      "id": "flow-integrable",
+      "frames": 9,
+      "witnesses": 8,
+      "status": "pass",
+      "x3d_max_geometry_difference": 5.551115123125783e-17,
+      "text_hubs": {
+        "display_samples": 4952,
+        "ply_edges": 4840,
+        "polygons": 0,
+        "losses": "OBJ loses appearance and scientific arrays; PLY has RGB8/opacity quantization and loses group identity/units/arrays; CSV is display samples, not source observations."
+      },
+      "science": {
+        "reference": "Scalar Python math trigonometric ABC field",
+        "max_velocity_grid_difference": 0.0
+      },
+      "vtk": {
+        "points": 4952,
+        "max_position_difference": 0.0,
+        "max_rgba_quantization_difference": 0.0017647058823528905,
+        "scientific_arrays": []
+      }
+    },
+    {
+      "id": "flow-anisotropic",
+      "frames": 9,
+      "witnesses": 8,
+      "status": "pass",
+      "x3d_max_geometry_difference": 5.551115123125783e-17,
+      "text_hubs": {
+        "display_samples": 5008,
+        "ply_edges": 4868,
+        "polygons": 0,
+        "losses": "OBJ loses appearance and scientific arrays; PLY has RGB8/opacity quantization and loses group identity/units/arrays; CSV is display samples, not source observations."
+      },
+      "science": {
+        "reference": "Scalar Python math trigonometric ABC field",
+        "max_velocity_grid_difference": 0.0
+      },
+      "vtk": {
+        "points": 5008,
+        "max_position_difference": 0.0,
+        "max_rgba_quantization_difference": 0.0019607653901129174,
+        "scientific_arrays": []
+      }
+    },
+    {
+      "id": "tensor-correlated",
+      "frames": 7,
+      "witnesses": 7,
+      "status": "pass",
+      "x3d_max_geometry_difference": 5.551115123125783e-17,
+      "text_hubs": {
+        "display_samples": 1722,
+        "ply_edges": 867,
+        "polygons": 960,
+        "losses": "OBJ loses appearance and scientific arrays; PLY has RGB8/opacity quantization and loses group identity/units/arrays; CSV is display samples, not source observations."
+      },
+      "science": {
+        "reference": "math.fsum centered cross-products, N−1 denominator",
+        "max_covariance_difference": 1.1102230246251565e-15
+      },
+      "vtk": {
+        "points": 1722,
+        "max_position_difference": 0.0,
+        "max_rgba_quantization_difference": 0.0019607843137254832,
+        "scientific_arrays": [
+          "inside_selected_ellipsoid",
+          "mahalanobis_squared",
+          "principal_scores"
+        ]
+      }
+    },
+    {
+      "id": "tensor-spherical",
+      "frames": 7,
+      "witnesses": 7,
+      "status": "pass",
+      "x3d_max_geometry_difference": 5.551115123125783e-17,
+      "text_hubs": {
+        "display_samples": 1722,
+        "ply_edges": 867,
+        "polygons": 960,
+        "losses": "OBJ loses appearance and scientific arrays; PLY has RGB8/opacity quantization and loses group identity/units/arrays; CSV is display samples, not source observations."
+      },
+      "science": {
+        "reference": "math.fsum centered cross-products, N−1 denominator",
+        "max_covariance_difference": 5.551115123125783e-16
+      },
+      "vtk": {
+        "points": 1722,
+        "max_position_difference": 0.0,
+        "max_rgba_quantization_difference": 0.0019607843137254832,
+        "scientific_arrays": [
+          "inside_selected_ellipsoid",
+          "mahalanobis_squared",
+          "principal_scores"
+        ]
+      }
+    },
+    {
+      "id": "tensor-mixture",
+      "frames": 7,
+      "witnesses": 7,
+      "status": "pass",
+      "x3d_max_geometry_difference": 5.551115123125783e-17,
+      "text_hubs": {
+        "display_samples": 1722,
+        "ply_edges": 867,
+        "polygons": 960,
+        "losses": "OBJ loses appearance and scientific arrays; PLY has RGB8/opacity quantization and loses group identity/units/arrays; CSV is display samples, not source observations."
+      },
+      "science": {
+        "reference": "math.fsum centered cross-products, N−1 denominator",
+        "max_covariance_difference": 1.7763568394002505e-15
+      },
+      "vtk": {
+        "points": 1722,
+        "max_position_difference": 0.0,
+        "max_rgba_quantization_difference": 0.0019607843137254832,
+        "scientific_arrays": [
+          "inside_selected_ellipsoid",
+          "mahalanobis_squared",
+          "principal_scores"
+        ]
+      }
+    },
+    {
+      "id": "modes-fundamental",
+      "frames": 9,
+      "witnesses": 6,
+      "status": "pass",
+      "x3d_max_geometry_difference": 0.0,
+      "text_hubs": {
+        "display_samples": 2427,
+        "ply_edges": 725,
+        "polygons": 3200,
+        "losses": "OBJ loses appearance and scientific arrays; PLY has RGB8/opacity quantization and loses group identity/units/arrays; CSV is display samples, not source observations."
+      },
+      "science": {
+        "reference": "Continuum rectangular frequency and actual mesh/field pairing",
+        "max_frequency_difference": 0.0,
+        "discretization_observed_order": 1.999382011018567
+      },
+      "vtk": {
+        "points": 2427,
+        "max_position_difference": 0.0,
+        "max_rgba_quantization_difference": 0.0019607843137254832,
+        "scientific_arrays": [
+          "displacement",
+          "velocity"
+        ]
+      }
+    },
+    {
+      "id": "modes-degenerate",
+      "frames": 9,
+      "witnesses": 6,
+      "status": "pass",
+      "x3d_max_geometry_difference": 0.0,
+      "text_hubs": {
+        "display_samples": 2476,
+        "ply_edges": 769,
+        "polygons": 3200,
+        "losses": "OBJ loses appearance and scientific arrays; PLY has RGB8/opacity quantization and loses group identity/units/arrays; CSV is display samples, not source observations."
+      },
+      "science": {
+        "reference": "Continuum rectangular frequency and actual mesh/field pairing",
+        "max_frequency_difference": 0.0,
+        "discretization_observed_order": 1.9976373892425432
+      },
+      "vtk": {
+        "points": 2476,
+        "max_position_difference": 0.0,
+        "max_rgba_quantization_difference": 0.001957862838289137,
+        "scientific_arrays": [
+          "displacement",
+          "velocity"
+        ]
+      }
+    },
+    {
+      "id": "modes-beats",
+      "frames": 12,
+      "witnesses": 6,
+      "status": "pass",
+      "x3d_max_geometry_difference": 0.0,
+      "text_hubs": {
+        "display_samples": 2550,
+        "ply_edges": 845,
+        "polygons": 3200,
+        "losses": "OBJ loses appearance and scientific arrays; PLY has RGB8/opacity quantization and loses group identity/units/arrays; CSV is display samples, not source observations."
+      },
+      "science": {
+        "reference": "Continuum rectangular frequency and actual mesh/field pairing",
+        "max_frequency_difference": 0.0,
+        "discretization_observed_order": 1.9976631376150327
+      },
+      "vtk": {
+        "points": 2550,
+        "max_position_difference": 0.0,
+        "max_rgba_quantization_difference": 0.0019607094499763944,
+        "scientific_arrays": [
+          "displacement",
+          "velocity"
+        ]
+      }
+    }
+  ],
+  "case_count": 9,
+  "frame_count": 78,
+  "source_sha256": {
+    "stemloom/__init__.py": "4d8417f2f54fa981ffb34aaa2f02176847a489f61c390d152cb7dfc6a1f4af54",
+    "stemloom/blender_io.py": "ba9e0d4dbcd4ddd4d3d851e5737bc7c0944ec4b1d9adb3b9f15c2d0167b5631e",
+    "stemloom/core.py": "1c16714879ee140876e3a3c8b8b637476ff8bb07d5849f01706165bb0109c56b",
+    "stemloom/exchange.py": "c1a836cd903801ec8550ebaf34faac8b29f581076cc7a4dd7864e0be7d10906c",
+    "stemloom/flow.py": "bf910d95025bf94906ac92b2208956848966e037a9b313515864d13fd75254cc",
+    "stemloom/modes.py": "77a026c1d9178e5238af96c77fd7a614fdb0d045791370d33b573c0b977677fa",
+    "stemloom/tensor.py": "9d01bf81f106856a3b66f594be64395565e997430460647070d20360a946dbc0",
+    "tools/build.py": "dd6e182d603ac3e72944e3ae5ee2b4a22b63e77a19e75f3cc5c500b2ee339c02",
+    "../../lib/stemkit/core.py": "b799990d80948989d6525fdd0c8f16c4eec884e659105fd6bd5750d4cf977600"
+  },
+  "published_source_matches_current": true,
+  "source_drift": "none",
+  "vtk_version": "9.3.1",
+  "duration_seconds": 5.472371751999162,
+  "finished_utc": "2026-11-17T19:54:23.262642+00:00",
+  "report_sha256": "b27e0f7b3c3c35a1d3efa10f94d6ebbe1f5eb6f065bcbd710cf40612921c610b"
+}

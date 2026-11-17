@@ -11,3 +11,10 @@ studies/*/film/*.mp4
 studies/*/film/.frames-*/
 **/__pycache__/
 studies/*/cases/*/*.wav
+
+# Research Loom: ready-to-run distributions include computed banks and renders.
+# Source checkouts rebuild them; the index and evidence retain their hashes.
+studies/research-loom/web/bank/*.json
+!studies/research-loom/web/bank/index.json
+studies/research-loom/exports/
+studies/research-loom/docs/assets/*.png

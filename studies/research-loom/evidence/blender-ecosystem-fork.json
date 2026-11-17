@@ -1,0 +1,103 @@
+{
+  "schema": "stemloom.blender-extension-probe/1",
+  "route": "fork",
+  "blender_version": "5.2.4 LTS",
+  "input_x3d_version": "4.0",
+  "fixture_sha256": "384bc5b20b2a76f37d9d0fd40696458b2bb231454a6f54618bb5277b2e5a739a",
+  "status": "pass",
+  "scope": "One executed bounded fixture, not general extension conformance.",
+  "extension_commit": "044bea3ae33a991f816de15a307826b6d7f576ec",
+  "manifest": "schema_version = \"1.0.0\"\nid = \"x3d_blender_io\"\nname = \"X3D Blender I/O\"\nversion = \"2.6.4\"\ntagline = \"X3D 4.0/4.1 import-export: PBR, HAnim, splats; VRML2 import\"\nmaintainer = \"HagopJay\"\ntype = \"add-on\"\ntags = [\"Import-Export\"]\nblender_version_min = \"4.2.0\"\nlicense = [\"SPDX:GPL-3.0-or-later\"]\nwebsite = \"https://github.com/hagopjay/x3d-blender-io\"\ncopyright = [\n    \"2026 HagopJay\",\n    \"2024-2025 Cedric Steiert (Bujus_Krachus)\",\n    \"2024-2025 Vincent Marchetti\",\n    \"2024 Hombre57\",\n    \"2011-2024 Campbell Barton\",\n    \"2011-2024 Bart\",\n    \"2012-2024 Bastien Montagne\",\n    \"2015-2024 Seva Alekseyev\",\n]\n\n[permissions]\nfiles = \"Required to access files for import/export\"\nnetwork = \"Required to download web resources for import\"\n",
+  "imported_objects": [
+    {
+      "name": "Observations",
+      "type": "MESH",
+      "x3d_properties": [
+        "x3d_def",
+        "x3d_imported"
+      ],
+      "vertices": 2,
+      "edges": 0,
+      "faces": 0,
+      "color_attributes": [
+        {
+          "name": "Color",
+          "domain": "POINT"
+        }
+      ]
+    },
+    {
+      "name": "Path",
+      "type": "MESH",
+      "x3d_properties": [
+        "x3d_def",
+        "x3d_imported"
+      ],
+      "vertices": 3,
+      "edges": 2,
+      "faces": 0,
+      "color_attributes": [
+        {
+          "name": "Color",
+          "domain": "POINT"
+        }
+      ]
+    },
+    {
+      "name": "Triangle",
+      "type": "MESH",
+      "x3d_properties": [
+        "x3d_def",
+        "x3d_imported",
+        "x3d_metadata"
+      ],
+      "vertices": 3,
+      "edges": 3,
+      "faces": 1,
+      "color_attributes": [
+        {
+          "name": "ColorPerCorner",
+          "domain": "CORNER"
+        }
+      ]
+    }
+  ],
+  "output_x3d_version": "4.0",
+  "output_bytes": 2608,
+  "output_node_counts": {
+    "IndexedFaceSet": 1,
+    "IndexedLineSet": 1,
+    "PointSet": 0,
+    "PhysicalMaterial": 1,
+    "Material": 0,
+    "Color": 1,
+    "ColorRGBA": 1,
+    "MetadataString": 1
+  },
+  "output_head_meta": [
+    {
+      "name": "generator",
+      "content": "X3D Blender I/O v2.6.1"
+    },
+    {
+      "name": "filename",
+      "content": "back.x3d"
+    },
+    {
+      "name": "stemloom.case",
+      "content": "hub-fixture"
+    },
+    {
+      "name": "info",
+      "content": "Object 'Observations' has no exportable faces."
+    }
+  ],
+  "requested_version_preserved": true,
+  "retention_status": "lossy",
+  "status_meaning": "Executed import/export behavior probe; consult retention_status for preservation.",
+  "loss_interpretation": [
+    "Inspect imported primitive types and output node counts: geometry can be baked or omitted.",
+    "Classic stock path advertises X3D 3.3; the ecosystem fork has its own modern 4.0 path.",
+    "This fixture is separate from the owned packet geometry adapter and its coordinate/metadata contract."
+  ]
+}
