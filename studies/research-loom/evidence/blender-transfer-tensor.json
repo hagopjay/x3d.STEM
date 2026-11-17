@@ -1,0 +1,43 @@
+{
+  "schema": "stemloom.blender-roundtrip/1",
+  "created_utc": "2026-11-17T19:45:50.787504+00:00",
+  "blender_version": "5.2.4 LTS",
+  "blender_version_tuple": [
+    5,
+    2,
+    4
+  ],
+  "packet": "packet.json",
+  "packet_sha256": "8ef744e525ebc9287ae47aad2bc1871df9ede695f5014aabe4cf6972bc0ebed3",
+  "source_packet_sha256": "8ef744e525ebc9287ae47aad2bc1871df9ede695f5014aabe4cf6972bc0ebed3",
+  "case_id": "tensor-correlated",
+  "frame_index": 4,
+  "time": 0.95,
+  "scientific_objects": 15,
+  "check": {
+    "status": "pass",
+    "records": 15,
+    "scientific_positions": 1722,
+    "max_coordinate_absolute_difference": 1.1913785602502003e-07,
+    "max_color_absolute_difference": 1.791281012408774e-08,
+    "absolute_tolerance": 3e-06,
+    "issues": [],
+    "scope": "Selected frame geometry, retained scalar appearance and record IDs. No solver or imported domain variables are recomputed."
+  },
+  "status": "pass",
+  "changed_geometry_control": {
+    "caught": true,
+    "changed": "One actual Blender geometry coordinate, with source metadata unchanged.",
+    "max_coordinate_absolute_difference": 0.009999995981062049
+  },
+  "coordinate_rotation_determinant": 1,
+  "adapter_sha256": "ba9e0d4dbcd4ddd4d3d851e5737bc7c0944ec4b1d9adb3b9f15c2d0167b5631e",
+  "tool_sha256": "bce7a5f32d9d085a78ec86c55561d409308aad0dee725e14cfc633a12f0c8e3c",
+  "extension_required": false,
+  "limits": [
+    "Owned meshes, sampled polyline tubes and point glyphs only.",
+    "Line/point radii are authored glyph appearance, not field measurements.",
+    "Preserved historical solver measurements are not rerun after Blender edits.",
+    "No arbitrary Blender material, modifier or animation round-trip claim."
+  ]
+}

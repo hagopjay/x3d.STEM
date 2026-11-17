@@ -1,0 +1,42 @@
+{
+  "schema": "stemloom.blender-render/1",
+  "status": "pass",
+  "created_utc": "2026-11-17T19:47:20.626898+00:00",
+  "blender_version": "5.2.4 LTS",
+  "engine": "Cycles",
+  "device": "CPU",
+  "threads": 2,
+  "samples": 24,
+  "width": 1280,
+  "height": 960,
+  "elapsed_seconds": 89.39853365999807,
+  "image_sha256": "17edb080a63ab8eb3cc24063ca347045b89a4d75da5b3a0ca1b254348e994758",
+  "image_bytes": 1539067,
+  "packet_sha256": "8ef744e525ebc9287ae47aad2bc1871df9ede695f5014aabe4cf6972bc0ebed3",
+  "source_packet_sha256": "8ef744e525ebc9287ae47aad2bc1871df9ede695f5014aabe4cf6972bc0ebed3",
+  "case_id": "tensor-correlated",
+  "frame_index": 4,
+  "time": 0.95,
+  "scientific_objects": 15,
+  "frame_sha256": "32781769e6ac45e7c3fe62307cbd22ce968913153343be8b9ab5d0cd66668e57",
+  "camera": {
+    "projection": "orthographic",
+    "scale": 6.469367980957031,
+    "location": [
+      14.652925491333008,
+      -20.44651985168457,
+      12.51954174041748
+    ],
+    "rotation_euler": [
+      1.1034773588180542,
+      3.842510309937097e-08,
+      0.6146630048751831
+    ]
+  },
+  "sampling_seed": 82417,
+  "adapter_sha256": "ba9e0d4dbcd4ddd4d3d851e5737bc7c0944ec4b1d9adb3b9f15c2d0167b5631e",
+  "tool_sha256": "09b53476b835657e0b84cefc7b2d6f9c4d4d6c680f49245f6e6f377f1ad71614",
+  "appearance": "Authored studio lights, Standard display transform, dark ceramic floor, vertex-color PBR, tube and point glyph radii.",
+  "scientific_change": "None: scientific object geometry is imported from the retained frame.",
+  "scope": "Offline Tier C still, not native X_ITE browser pixels, real-time frame rate, or GPU benchmark."
+}

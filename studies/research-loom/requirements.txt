@@ -1,0 +1,8 @@
+# Interactive browser playback of the included bank needs no Python packages.
+# Scientific regeneration, CSV analysis and the complete verification require:
+numpy>=2.2,<3
+scipy>=1.15,<2
+lxml>=6,<7
+jsonschema>=4.26,<5
+# Optional: actual VTK reader validation. Missing VTK produces a partial result.
+vtk>=9.4,<10

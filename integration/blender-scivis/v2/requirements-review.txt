@@ -1,0 +1,9 @@
+# Optional review/ontology/document tooling; inventory.py itself is stdlib-only.
+lxml>=5
+jsonschema>=4
+rdflib>=7.6
+pyshacl>=0.40
+Markdown>=3
+matplotlib>=3
+numpy>=1.24
+pytest>=8

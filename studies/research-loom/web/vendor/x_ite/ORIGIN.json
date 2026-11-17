@@ -1,0 +1,23 @@
+{
+  "source_repository": "https://github.com/hagopjay/x3d.STEM",
+  "source_commit": "09a6321da28ea494b8dc0bae59eaa6936e04d2d8",
+  "source_path": "studies/electron-cloud/vendor/x_ite",
+  "scope": "Copied existing vendored runtime and assets without modification. Renderer performance is not inferred from these bytes.",
+  "files_sha256": {
+    "LICENSE.md": "4b4a56dafaa360d8541ed5425e9e891cb678e6cd5eaf71bfe7ef25514db01695",
+    "assets/components/EventUtilitiesComponent.min.js": "debb52ec149388b8dc102263a53716acbd2e3dfd100d31787c7445e63e4c87ce",
+    "assets/components/Geometry2DComponent.min.js": "c3820f74e259fe2d965a7df525d0397c23c6d7171f7742ff6326dc812e6777d8",
+    "assets/components/KeyDeviceSensorComponent.min.js": "75f7d0029c086f32cea25f17e8de985b72cce73f34c95e627767f3c46dbea9f8",
+    "assets/components/ParticleSystemsComponent.min.js": "75a9534664a5a43acd4ebda56c649adc4d1860f17cbc6d74706e319895413663",
+    "assets/components/ScriptingComponent.min.js": "eb8e388a42e0f1702bd2157303105ecef8dab85e3c186d656a83e4d2b5cd345d",
+    "assets/components/TextComponent.min.js": "d4ea785709b2a4fa603901f0bc9810443619f846a82b07deedfff9959dda157b",
+    "assets/components/Texturing3DComponent.min.js": "0497e59c0837a91d949478ecf1386fc8145f31d938bd82438bf392eba3c92188",
+    "assets/fonts/PT_Sans/PTSans-Regular.woff2": "ab8c275a98d2dda2d0029af2a1e47817094841cecf1969207af332b107ae31aa",
+    "assets/images/logo.svg": "32957ec5753338f88dfc512b750b835ec024a80501e0b92701afb62be93a49dd",
+    "assets/lib/lut_ggx.png": "7103005340dbcc8956c7d20b9ef84d521c45605fb82de2059d539d329bbac0c1",
+    "assets/lib/mikktspace_bg.wasm": "d734e040ae6480a0d00ba08b8aaae29c2eb59c8705c38b7bc120885fc94c54e2",
+    "assets/linetype/linetypes.png": "824a23ce80644950a9957bba5f879dc72cb36c86964bcb750d7e17e56c3fca1b",
+    "x_ite.css": "e9eb804d4bb8726d3c952af2aa878a9bc7090805a0af56d3bcf32b54e4dc4bb4",
+    "x_ite.min.js": "66ce41650e084ac519f552b0129f625d3941c086ea8edf1623c7d68e365e08a3"
+  }
+}

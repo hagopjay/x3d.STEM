@@ -10,6 +10,16 @@ Every study except Kerr 2 runs on the repo's Pages site: https://hagopjay.github
 
 ## Studies
 
+**New: [Research Loom](studies/research-loom/)** — three researcher-oriented
+instruments for ABC flow, covariance/PCA/uncertainty, and membrane resonance.
+Nine cases and 78 saved states retain raw data, numerical witnesses, X3D/VTK
+exports, and measured Blender 5.2.4 transfers. The focused distribution includes
+ready-to-run payloads and actual Cycles CPU stills. Source checkouts rebuild the
+bank. Start with `python3 run_research_loom.py --open` after building the study;
+read [the repository assessment](docs/RESEARCH-LOOM-ASSESSMENT.md) for its links
+to x3d.demo, x3d.docs and hub interoperability. This addition is not yet deployed
+to Pages.
+
 | Study | What it shows | State |
 |---|---|---|
 | [Kerr 2 · The Photon Ring](studies/kerr2/) | A black hole's photon ring with every pass of light kept as its own layer, zoomable 20,000× into the sub-rings, colour bound to the frequency shift, checked against Bardeen's analytic critical curve and the e^−π sub-ring law | Flagship 1, pass 1 |

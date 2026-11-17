@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D version="4.1" profile="Immersive" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd">
+  <head>
+    <component name="GaussianSplats" level="1" />
+    <meta name="generator" content="X3D Blender I/O v2.6.1" />
+    <meta name="filename" content="native-fork-roundtrip.x3d" />
+  </head>
+  <Scene>
+    <NavigationInfo headlight="true" type='"EXAMINE" "ANY"' />
+    <Transform DEF="OB_Native_SH3_Oracle" translation="0.000000 0.000000 0.000000" rotation="0.000000 0.000000 1.000000 0.000000" scale="1.000000 1.000000 1.000000">
+      <GaussianSplats DEF="GS_native_four_sh3" positions="1 2 3 -1 0.5 2.5 0 -2 1 4 0 -1" scales="0.099999994 0.19999999 0.29999998 0.049999997 0.049999997 0.39999998 0.29999998 0.099999994 0.02 0.01 0.015 0.02" orientations="0 0 0 1 0.5 0.5 0.5 0.5 1 0 0 0 0 0.7071068 0 0.7071068" opacities="0.5 0.880797 0.047425874 0.9933072" sphericalHarmonicsDegree0Coef0="0 0 0 1 -1 0.5 -2 2.5 0.25 0.3 0.2 0.1" sphericalHarmonicsDegree1Coef0="0.001 0.016 0.031 0.0011 0.0176 0.0341 0.0012 0.0192 0.0372 0.0013 0.0208 0.0403" sphericalHarmonicsDegree1Coef1="0.002 0.017 0.032 0.0022 0.0187 0.0352 0.0024 0.0204 0.0384 0.0026 0.0221 0.0416" sphericalHarmonicsDegree1Coef2="0.003 0.018 0.033 0.0033 0.0198 0.0363 0.0036 0.0216 0.0396 0.0039 0.0234 0.0429" sphericalHarmonicsDegree2Coef0="0.004 0.019 0.034 0.0044 0.0209 0.0374 0.0048 0.0228 0.0408 0.0052 0.0247 0.0442" sphericalHarmonicsDegree2Coef1="0.005 0.02 0.035 0.0055 0.022 0.0385 0.006 0.024 0.042 0.0065 0.026 0.0455" sphericalHarmonicsDegree2Coef2="0.006 0.021 0.036 0.0066 0.0231 0.0396 0.0072 0.0252 0.0432 0.0078 0.0273 0.0468" sphericalHarmonicsDegree2Coef3="0.007 0.022 0.037 0.0077 0.0242 0.0407 0.0084 0.0264 0.0444 0.0091 0.0286 0.0481" sphericalHarmonicsDegree2Coef4="0.008 0.023 0.038 0.0088 0.0253 0.0418 0.0096 0.0276 0.0456 0.0104 0.0299 0.0494" sphericalHarmonicsDegree3Coef0="0.009 0.024 0.039 0.0099 0.0264 0.0429 0.0108 0.0288 0.0468 0.0117 0.0312 0.0507" sphericalHarmonicsDegree3Coef1="0.01 0.025 0.04 0.011 0.0275 0.044 0.012 0.03 0.048 0.013 0.0325 0.052" sphericalHarmonicsDegree3Coef2="0.011 0.026 0.041 0.0121 0.0286 0.0451 0.0132 0.0312 0.0492 0.0143 0.0338 0.0533" sphericalHarmonicsDegree3Coef3="0.012 0.027 0.042 0.0132 0.0297 0.0462 0.0144 0.0324 0.0504 0.0156 0.0351 0.0546" sphericalHarmonicsDegree3Coef4="0.013 0.028 0.043 0.0143 0.0308 0.0473 0.0156 0.0336 0.0516 0.0169 0.0364 0.0559" sphericalHarmonicsDegree3Coef5="0.014 0.029 0.044 0.0154 0.0319 0.0484 0.0168 0.0348 0.0528 0.0182 0.0377 0.0572" sphericalHarmonicsDegree3Coef6="0.015 0.03 0.045 0.0165 0.033 0.0495 0.018 0.036 0.054 0.0195 0.039 0.0585" />
+    </Transform>
+  </Scene>
+</X3D>

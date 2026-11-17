@@ -1,0 +1,260 @@
+{
+  "schema": "stemloom.release-checks/1",
+  "status": "pass",
+  "started_utc": "2026-11-17T19:53:51.826820+00:00",
+  "source_sha256": {
+    "serve.py": "32c413ec15d244a33995f9f465134b8b4ef380fe1e64be138375698683efcaee",
+    "stemloom/__init__.py": "4d8417f2f54fa981ffb34aaa2f02176847a489f61c390d152cb7dfc6a1f4af54",
+    "stemloom/blender_io.py": "ba9e0d4dbcd4ddd4d3d851e5737bc7c0944ec4b1d9adb3b9f15c2d0167b5631e",
+    "stemloom/core.py": "1c16714879ee140876e3a3c8b8b637476ff8bb07d5849f01706165bb0109c56b",
+    "stemloom/exchange.py": "c1a836cd903801ec8550ebaf34faac8b29f581076cc7a4dd7864e0be7d10906c",
+    "stemloom/flow.py": "bf910d95025bf94906ac92b2208956848966e037a9b313515864d13fd75254cc",
+    "stemloom/modes.py": "77a026c1d9178e5238af96c77fd7a614fdb0d045791370d33b573c0b977677fa",
+    "stemloom/tensor.py": "9d01bf81f106856a3b66f594be64395565e997430460647070d20360a946dbc0",
+    "tests/scene.test.cjs": "b0b72d1d2bde6880d5af41c87a0936156b7947fac4ceb78e7e0ae38c937f79c4",
+    "tests/test_blender_contract.py": "07ed160eecfb5658acbf4906c17d1171d0ef3d4c0e4556e1bf428ae930bde970",
+    "tests/test_exchange.py": "52f767d4c577c434a496b15128f964f2506053bb68a1f41d242917bab6631949",
+    "tests/test_flow.py": "5c1a63f0f984a751cfbdefdbd8182a1960c48712020d90dbfb71a8aa7f4ec1ee",
+    "tests/test_modes.py": "9e0333ebc0ae7d36eee060e81d976f18d5c22a0d08249473904d3b357bbffd38",
+    "tests/test_pipeline.py": "2865ee2ac8ea0305ccc10a81ffb4b8e7684b5d174cd81047061fa837bc69d0f7",
+    "tests/test_server.py": "c59ea38d9b6e653207a9197d317520f19daf54eaa90424a06da20a822fe11149",
+    "tests/test_tensor.py": "4ad72d4140775555701ad0fd77cb879d04fb2b4dff1e9d67b230a0a37a652774",
+    "tools/blender_bridge.py": "bce7a5f32d9d085a78ec86c55561d409308aad0dee725e14cfc633a12f0c8e3c",
+    "tools/build.py": "dd6e182d603ac3e72944e3ae5ee2b4a22b63e77a19e75f3cc5c500b2ee339c02",
+    "tools/check.py": "a05e7bc6d82a3ecaea372c9017aab7348f0baf47e298bc4f23f25f02997e857c",
+    "tools/export_glb.py": "2750f3c1d491620ab85ed8d38e90dd69552f8cc0b8b5747bad2a4deddb7fab20",
+    "tools/hub.py": "1d058c83ca3fd59a1d977a47b64ae37bc49fea75404e9bfd6e139859407f0290",
+    "tools/render_blender.py": "09b53476b835657e0b84cefc7b2d6f9c4d4d6c680f49245f6e6f377f1ad71614",
+    "tools/validate_x3d.py": "2bdd9ff403931e701a30061cd4d53fa909698245b8128a5c93c4facf290a8a12",
+    "tools/verify.py": "89477b8bb21a29136d0ae95fdbb02fad97e5dca766a3cbfcbf1b13941c772b8a",
+    "web/app.js": "9ca047980df159d2c3637613111a830f9f08ae07aca3acc6378a5420c844422f",
+    "web/index.html": "abf61ca5d7dfa92fe870dc4cfb593e129b92ef253d4c511cce0ad71a69513bad",
+    "web/scene.js": "0048ec7214d291263cc9113e6c64409b6d63f4fba10e06b2e10fcb766a45fc4c",
+    "web/style.css": "8a437509c0fa796a107af2fcf6339e4c94c18e5f1e1086dc0532e55658b0ff01"
+  },
+  "python": "3.12.14",
+  "commands": [
+    {
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "cwd": "study",
+      "exit_code": 0,
+      "seconds": 11.321705524002027,
+      "stdout": "",
+      "stderr": "----------------------------------------------------------------------\nRan 59 tests in 10.120s\n\nOK\n",
+      "tests_run": 59
+    },
+    {
+      "command": [
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "cwd": "study",
+      "exit_code": 0,
+      "seconds": 12.690505637001479,
+      "stdout": "",
+      "stderr": "----------------------------------------------------------------------\nRan 59 tests in 10.347s\n\nOK\n",
+      "tests_run": 59
+    },
+    {
+      "command": [
+        "tests/scene.test.cjs"
+      ],
+      "cwd": "study",
+      "exit_code": 0,
+      "seconds": 0.07045082400145475,
+      "stdout": "PASS frame geometry refusals, projection scale, and obsolete native parse cannot replace a fresh frame\nPASS repeated import replaces the current identity and retains exact canonical packet bytes\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "-E",
+        "-s",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "lib/stemkit/tests",
+        "-t",
+        "lib",
+        "-q"
+      ],
+      "cwd": "repository",
+      "exit_code": 0,
+      "seconds": 0.7200903299999482,
+      "stdout": "",
+      "stderr": "----------------------------------------------------------------------\nRan 14 tests in 0.600s\n\nOK\n",
+      "tests_run": 14
+    },
+    {
+      "command": [
+        "-O",
+        "-E",
+        "-s",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "lib/stemkit/tests",
+        "-t",
+        "lib",
+        "-q"
+      ],
+      "cwd": "repository",
+      "exit_code": 0,
+      "seconds": 1.0678784580013598,
+      "stdout": "",
+      "stderr": "----------------------------------------------------------------------\nRan 14 tests in 0.659s\n\nOK\n",
+      "tests_run": 14
+    },
+    {
+      "command": [
+        "tools/verify.py"
+      ],
+      "cwd": "study",
+      "exit_code": 0,
+      "seconds": 5.701629667000816,
+      "stdout": "{\"status\": \"pass\", \"case_count\": 9, \"frame_count\": 78, \"duration_seconds\": 5.472371751999162, \"error\": null}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "tools/validate_x3d.py"
+      ],
+      "cwd": "study",
+      "exit_code": 0,
+      "seconds": 7.342745006000769,
+      "stdout": "{\n  \"status\": \"pass\",\n  \"files\": 78,\n  \"passed\": 78,\n  \"paired_controls_caught\": 2,\n  \"output\": \"/workspace/scratch/aee90170662d/x3d.STEM/studies/research-loom/evidence/x3d-validation.json\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "Local model, transfer, HTTP and UI-adapter checks. Native X_ITE browser rendering is not claimed.",
+  "vendored_runtime": {
+    "status": "pass",
+    "files": 15
+  },
+  "blender": [
+    {
+      "kind": "flow",
+      "action": "transfer",
+      "status": "pass",
+      "retained_roundtrip_sha256": "e60a7e98babeb872689845e788d50bd0e2bbc2363ceb683969f4bcb7a6e37fd8",
+      "measured_geometry": {
+        "status": "pass",
+        "records": 95,
+        "scientific_positions": 4964,
+        "max_coordinate_absolute_difference": 1.4744338994177042e-07,
+        "max_color_absolute_difference": 1.9024161579395127e-08,
+        "absolute_tolerance": 3e-06,
+        "issues": [],
+        "scope": "Selected frame geometry, retained scalar appearance and record IDs. No solver or imported domain variables are recomputed."
+      },
+      "blender_version": "5.2.4 LTS",
+      "receipt_sha256": "db6eabc1a89e842e1cc8e0de347a7db92c7c1f30d9802fe8d9d79c0177034862"
+    },
+    {
+      "kind": "flow",
+      "action": "render",
+      "status": "pass",
+      "image_sha256": "ff2ca909e89c1dc5966c6df57cb3e8a026645889a001a3a9ffd0e01cde260dd1",
+      "blender_version": "5.2.4 LTS",
+      "receipt_sha256": "9edd096efb9c0bd2dcdb4f0effca98515240b7a091ecaa8144e03b804bbab757"
+    },
+    {
+      "kind": "flow",
+      "action": "glb",
+      "status": "pass",
+      "glb_sha256": "6e4632b452b8ca88c88a4309d692777c245e3484cc8b8f16c3033a924fdb96f8",
+      "source_blend_sha256": "eb3bce31a1eddb2403fef5d05e83b2e99200d5dc74d9852cdca553f47dbc2566",
+      "blender_version": "5.2.4 LTS",
+      "receipt_sha256": "7bb71e8551a9f3e37d6ce2b08f4df6276014f3dba8ce2a50181775d6292e32f4"
+    },
+    {
+      "kind": "tensor",
+      "action": "transfer",
+      "status": "pass",
+      "retained_roundtrip_sha256": "69f35c957597954990d38061e6060ea010df805750e99c13b8a7fab5754d10bd",
+      "measured_geometry": {
+        "status": "pass",
+        "records": 15,
+        "scientific_positions": 1722,
+        "max_coordinate_absolute_difference": 1.1913785602502003e-07,
+        "max_color_absolute_difference": 1.791281012408774e-08,
+        "absolute_tolerance": 3e-06,
+        "issues": [],
+        "scope": "Selected frame geometry, retained scalar appearance and record IDs. No solver or imported domain variables are recomputed."
+      },
+      "blender_version": "5.2.4 LTS",
+      "receipt_sha256": "354f084b821f810651e2ad3af2a8043376902020b7eb88f6df512625c608c3ff"
+    },
+    {
+      "kind": "tensor",
+      "action": "render",
+      "status": "pass",
+      "image_sha256": "17edb080a63ab8eb3cc24063ca347045b89a4d75da5b3a0ca1b254348e994758",
+      "blender_version": "5.2.4 LTS",
+      "receipt_sha256": "c48b65593a3c00854492baa3922880e2908dd650684e86635b781dc9412e347e"
+    },
+    {
+      "kind": "tensor",
+      "action": "glb",
+      "status": "pass",
+      "glb_sha256": "834998b1dc0bd216f3512502ac678e0ae5e4e49bb50d27f48fbc31c35b40d611",
+      "source_blend_sha256": "f3e656b7627ebdcbe09a7a0b3d7909c915f094d5c319bc63b74c68ec680667b4",
+      "blender_version": "5.2.4 LTS",
+      "receipt_sha256": "f821fedccd0dff11f4f8ae7b6b4197a166a9759b4de21364185a79a9cf5f83c1"
+    },
+    {
+      "kind": "modes",
+      "action": "transfer",
+      "status": "pass",
+      "retained_roundtrip_sha256": "39b18b6ed531451002de627aacf830c6a4bdfda5d3e14d87117461a55f81f8f9",
+      "measured_geometry": {
+        "status": "pass",
+        "records": 25,
+        "scientific_positions": 2510,
+        "max_coordinate_absolute_difference": 9.536743217353205e-08,
+        "max_color_absolute_difference": 1.9335750667259788e-08,
+        "absolute_tolerance": 3e-06,
+        "issues": [],
+        "scope": "Selected frame geometry, retained scalar appearance and record IDs. No solver or imported domain variables are recomputed."
+      },
+      "blender_version": "5.2.4 LTS",
+      "receipt_sha256": "48e3de7caa09b7ae3cde71929cc7ec0f6a6fd36d844da732eb980ddb5f8e336c"
+    },
+    {
+      "kind": "modes",
+      "action": "render",
+      "status": "pass",
+      "image_sha256": "e8c513117d34987e9962db88ccf1096be7a94061de690dc501ff1ae47e65756c",
+      "blender_version": "5.2.4 LTS",
+      "receipt_sha256": "246a796326e4a126461da499bfc9ad95e4fda3a016ae0760618a507609de41b1"
+    },
+    {
+      "kind": "modes",
+      "action": "glb",
+      "status": "pass",
+      "glb_sha256": "a8e2abd6e562581d2971c3d171edfd445aae6149cd598b651687068adb595708",
+      "source_blend_sha256": "35e4b95ab7e677dc72127740f891065373e87e2cd13b5cef424f2a642720bfcb",
+      "blender_version": "5.2.4 LTS",
+      "receipt_sha256": "a4d94a8c529215f55505e87f825ff3ae60e394489441a8a59a062d1ff94ed778"
+    }
+  ],
+  "source_drift": "none",
+  "browser": {
+    "status": "not_run",
+    "reason": "This host blocks native browser socket operations; actual Blender CPU render receipts are separate."
+  },
+  "finished_utc": "2026-11-17T19:54:31.067264+00:00"
+}

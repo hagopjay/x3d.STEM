@@ -1,0 +1,535 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:x3d-scivis:inventory:schema:1",
+  "title": "Private scientific visualization evidence inventory adapter",
+  "type": "object",
+  "required": [
+    "schema",
+    "@context",
+    "@graph"
+  ],
+  "properties": {
+    "schema": {
+      "const": "scivis.evidence-spine/1"
+    },
+    "@context": {
+      "const": {
+        "@vocab": "urn:x3d-scivis:inventory:",
+        "scivis": "urn:x3d-scivis:inventory:",
+        "prov": "http://www.w3.org/ns/prov#",
+        "sosa": "http://www.w3.org/ns/sosa/",
+        "qudt": "http://qudt.org/schema/qudt/",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "dcterms": "http://purl.org/dc/terms/",
+        "title": "dcterms:title",
+        "scope": "dcterms:description",
+        "based_on": {
+          "@id": "prov:wasDerivedFrom",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "subjects": {
+          "@id": "scivis:subject",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "artifacts": {
+          "@id": "scivis:boundArtifact",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "source_artifacts": {
+          "@id": "scivis:toolSourceArtifact",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "source_bindings": {
+          "@id": "scivis:sourceBinding",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "run": {
+          "@id": "scivis:validationRun",
+          "@type": "@id"
+        },
+        "tool": {
+          "@id": "scivis:toolBuild",
+          "@type": "@id"
+        },
+        "bridge": {
+          "@id": "scivis:relatesToBridge",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "evidence": {
+          "@id": "scivis:candidateEvidence",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "coordinate_frame": {
+          "@id": "scivis:coordinateFrame",
+          "@type": "@id"
+        },
+        "input_frame": {
+          "@id": "scivis:inputFrame",
+          "@type": "@id"
+        },
+        "output_frame": {
+          "@id": "scivis:outputFrame",
+          "@type": "@id"
+        },
+        "packet": {
+          "@id": "scivis:packetArtifact",
+          "@type": "@id"
+        },
+        "reproduces": {
+          "@id": "scivis:reproducesEvidence",
+          "@type": "@id"
+        },
+        "facets": "scivis:facet",
+        "outcome": "scivis:outcome",
+        "evidence_state": "scivis:evidenceState",
+        "hash_method": "scivis:hashMethod",
+        "sha256": "scivis:sha256",
+        "confidentiality": "scivis:confidentiality"
+      }
+    },
+    "@graph": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/Artifact"
+          },
+          {
+            "$ref": "#/$defs/Claim"
+          },
+          {
+            "$ref": "#/$defs/EvidenceRecord"
+          },
+          {
+            "$ref": "#/$defs/ValidationRun"
+          },
+          {
+            "$ref": "#/$defs/Bridge"
+          },
+          {
+            "$ref": "#/$defs/CoordinateFrame"
+          },
+          {
+            "$ref": "#/$defs/Dataset"
+          },
+          {
+            "$ref": "#/$defs/Loss"
+          },
+          {
+            "$ref": "#/$defs/ToolBuild"
+          },
+          {
+            "$ref": "#/$defs/Transformation"
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "common": {
+      "type": "object",
+      "required": [
+        "@id",
+        "@type",
+        "title",
+        "scope",
+        "confidentiality"
+      ],
+      "properties": {
+        "@id": {
+          "type": "string",
+          "pattern": "^urn:"
+        },
+        "@type": {
+          "enum": [
+            "scivis:Artifact",
+            "scivis:Bridge",
+            "scivis:Claim",
+            "scivis:CoordinateFrame",
+            "scivis:Dataset",
+            "scivis:EvidenceRecord",
+            "scivis:Loss",
+            "scivis:ToolBuild",
+            "scivis:Transformation",
+            "scivis:ValidationRun"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidentiality": {
+          "enum": [
+            "private",
+            "public",
+            "restricted"
+          ]
+        },
+        "based_on": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^urn:"
+          },
+          "uniqueItems": true
+        },
+        "subjects": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^urn:"
+          },
+          "uniqueItems": true
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^urn:"
+          },
+          "uniqueItems": true
+        },
+        "source_bindings": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^urn:"
+          },
+          "uniqueItems": true
+        },
+        "source_artifacts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^urn:"
+          },
+          "uniqueItems": true
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^urn:"
+          },
+          "uniqueItems": true
+        },
+        "bridge": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^urn:"
+          },
+          "uniqueItems": true
+        },
+        "facets": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*(?:\\.[a-z][a-z0-9_-]*)+$"
+          }
+        },
+        "scope_terms": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "run": {
+          "type": "string",
+          "pattern": "^urn:"
+        },
+        "tool": {
+          "type": "string",
+          "pattern": "^urn:"
+        },
+        "coordinate_frame": {
+          "type": "string",
+          "pattern": "^urn:"
+        },
+        "input_frame": {
+          "type": "string",
+          "pattern": "^urn:"
+        },
+        "output_frame": {
+          "type": "string",
+          "pattern": "^urn:"
+        },
+        "packet": {
+          "type": "string",
+          "pattern": "^urn:"
+        },
+        "reproduces": {
+          "type": "string",
+          "pattern": "^urn:"
+        }
+      },
+      "additionalProperties": true
+    },
+    "Artifact": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/common"
+        },
+        {
+          "properties": {
+            "@type": {
+              "const": "scivis:Artifact"
+            },
+            "locator": {
+              "type": "object",
+              "required": [
+                "root",
+                "path"
+              ],
+              "properties": {
+                "root": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+"
+                }
+              },
+              "additionalProperties": false
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "hash_method": {
+              "const": "sha256-file-bytes"
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "locator",
+            "sha256",
+            "hash_method",
+            "bytes"
+          ]
+        }
+      ]
+    },
+    "Claim": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/common"
+        },
+        {
+          "properties": {
+            "@type": {
+              "const": "scivis:Claim"
+            },
+            "required_state": {
+              "enum": [
+                "reported",
+                "inspected",
+                "executed",
+                "reproduced"
+              ]
+            }
+          },
+          "required": [
+            "facets",
+            "subjects",
+            "scope_terms",
+            "required_state",
+            "evidence"
+          ]
+        }
+      ]
+    },
+    "EvidenceRecord": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/common"
+        },
+        {
+          "properties": {
+            "@type": {
+              "const": "scivis:EvidenceRecord"
+            },
+            "evidence_state": {
+              "enum": [
+                "reported",
+                "inspected",
+                "executed",
+                "reproduced"
+              ]
+            },
+            "outcome": {
+              "enum": [
+                "fail",
+                "partial",
+                "pass",
+                "unknown"
+              ]
+            },
+            "observed_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "facets",
+            "subjects",
+            "scope_terms",
+            "evidence_state",
+            "outcome",
+            "artifacts"
+          ]
+        }
+      ]
+    },
+    "ValidationRun": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/common"
+        },
+        {
+          "properties": {
+            "@type": {
+              "const": "scivis:ValidationRun"
+            },
+            "execution": {
+              "enum": [
+                "recorded",
+                "not_run"
+              ]
+            },
+            "outcome": {
+              "enum": [
+                "fail",
+                "partial",
+                "pass",
+                "unknown"
+              ]
+            },
+            "ended_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "execution",
+            "outcome",
+            "artifacts"
+          ]
+        }
+      ]
+    },
+    "Bridge": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/common"
+        },
+        {
+          "properties": {
+            "@type": {
+              "const": "scivis:Bridge"
+            }
+          },
+          "required": []
+        }
+      ]
+    },
+    "CoordinateFrame": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/common"
+        },
+        {
+          "properties": {
+            "@type": {
+              "const": "scivis:CoordinateFrame"
+            }
+          },
+          "required": []
+        }
+      ]
+    },
+    "Dataset": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/common"
+        },
+        {
+          "properties": {
+            "@type": {
+              "const": "scivis:Dataset"
+            }
+          },
+          "required": []
+        }
+      ]
+    },
+    "Loss": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/common"
+        },
+        {
+          "properties": {
+            "@type": {
+              "const": "scivis:Loss"
+            }
+          },
+          "required": []
+        }
+      ]
+    },
+    "ToolBuild": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/common"
+        },
+        {
+          "properties": {
+            "@type": {
+              "const": "scivis:ToolBuild"
+            }
+          },
+          "required": []
+        }
+      ]
+    },
+    "Transformation": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/common"
+        },
+        {
+          "properties": {
+            "@type": {
+              "const": "scivis:Transformation"
+            }
+          },
+          "required": []
+        }
+      ]
+    }
+  },
+  "$comment": "JSON Schema enforces shape only. inventory.validate additionally checks unique identities, reference resolution, exact local hash methods, scope terms, time, and executed/reproduced run requirements. This is an adapter schema, not a new provenance protocol."
+}

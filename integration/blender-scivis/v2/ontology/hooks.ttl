@@ -1,0 +1,54 @@
+@prefix sv: <urn:x3d-scivis:inventory:> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+sv: a owl:Ontology ;
+  rdfs:label "Private scientific visualization integration vocabulary" ;
+  rdfs:comment "Local adapter vocabulary. Alignments are hooks, not certification of a domain ontology or external Loom profile." .
+
+sv:Artifact a rdfs:Class ; rdfs:subClassOf prov:Entity .
+sv:Dataset a rdfs:Class ; rdfs:subClassOf prov:Entity .
+sv:Claim a rdfs:Class ; rdfs:subClassOf prov:Entity .
+sv:EvidenceRecord a rdfs:Class ; rdfs:subClassOf prov:Entity ;
+  rdfs:comment "A record about an observation; not automatically the observation activity itself." .
+sv:ToolBuild a rdfs:Class ; rdfs:subClassOf prov:Entity .
+sv:ValidationRun a rdfs:Class ; rdfs:subClassOf prov:Activity .
+sv:Transformation a rdfs:Class ; rdfs:subClassOf prov:Activity .
+sv:Bridge a rdfs:Class ; rdfs:subClassOf skos:Concept .
+sv:Loss a rdfs:Class ;
+  rdfs:comment "A scoped difference under a declared comparison, not a scalar badness score." .
+sv:CoordinateFrame a rdfs:Class .
+sv:Quantity a rdfs:Class ; rdfs:seeAlso qudt:QuantityValue .
+sv:Observation a rdfs:Class ; rdfs:seeAlso sosa:Observation .
+
+sv:representation a skos:ConceptScheme ; skos:prefLabel "Representation and data classes" .
+sv:points a skos:Concept ; skos:inScheme sv:representation ; skos:prefLabel "Points and samples" .
+sv:field a skos:Concept ; skos:inScheme sv:representation ; skos:prefLabel "Scalar, vector and tensor fields" .
+sv:surface a skos:Concept ; skos:inScheme sv:representation ; skos:prefLabel "Surfaces and meshes" .
+sv:volume a skos:Concept ; skos:inScheme sv:representation ; skos:prefLabel "Voxel and sparse volumes" .
+sv:radiance a skos:Concept ; skos:inScheme sv:representation ; skos:prefLabel "Radiance representations and Gaussian splats" .
+sv:structure a skos:Concept ; skos:inScheme sv:representation ; skos:prefLabel "Molecular, skeletal and semantic structure" .
+sv:timeSeries a skos:Concept ; skos:inScheme sv:representation ; skos:prefLabel "Time, animation and trajectories" .
+
+sv:facetScheme a skos:ConceptScheme ; skos:prefLabel "Independent acceptance facets" .
+sv:legality a skos:Concept ; skos:inScheme sv:facetScheme ; skos:prefLabel "Schema and semantic legality" .
+sv:loadability a skos:Concept ; skos:inScheme sv:facetScheme ; skos:prefLabel "Loading and runtime lifecycle" .
+sv:visibility a skos:Concept ; skos:inScheme sv:facetScheme ; skos:prefLabel "Visible output" .
+sv:geometry a skos:Concept ; skos:inScheme sv:facetScheme ; skos:prefLabel "Geometry, topology and completeness" .
+sv:quantity a skos:Concept ; skos:inScheme sv:facetScheme ; skos:prefLabel "Scientific quantities, units and uncertainty" .
+sv:appearance a skos:Concept ; skos:inScheme sv:facetScheme ; skos:prefLabel "Appearance and color encoding" .
+sv:dynamics a skos:Concept ; skos:inScheme sv:facetScheme ; skos:prefLabel "Animation, causality and temporal behavior" .
+sv:provenance a skos:Concept ; skos:inScheme sv:facetScheme ; skos:prefLabel "Source and transformation history" .
+sv:resources a skos:Concept ; skos:inScheme sv:facetScheme ; skos:prefLabel "Memory, time and numerical budgets" .
+sv:rights a skos:Concept ; skos:inScheme sv:facetScheme ; skos:prefLabel "Rights assertions and distribution policy" .
+
+sv:unit rdfs:seeAlso qudt:unit .
+sv:quantityKind rdfs:seeAlso qudt:hasQuantityKind .
+sv:wasObservedBy rdfs:seeAlso sosa:madeBySensor .
+sv:comparisonProfile rdfs:comment "Names quantity, association, coordinate mapping, equivalence relation and tolerance rationale." .
+sv:hashMethod rdfs:comment "The full algorithm and normalization branch. A file-byte SHA is not an XML content hash." .
+sv:reproducesEvidence rdfs:comment "Links evidence records under the same controlled scope. Activity-to-activity PROV wasInformedBy must be applied to runs, not these record entities." .

@@ -1,0 +1,10 @@
+# Example 1: trace a claim to its candidate evidence and exact bound artifacts.
+PREFIX sv: <urn:x3d-scivis:inventory:>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT ?claim ?title ?evidence ?state ?outcome ?artifact ?sha
+WHERE {
+  ?claim a sv:Claim ; dcterms:title ?title ; sv:candidateEvidence ?evidence .
+  ?evidence sv:evidenceState ?state ; sv:outcome ?outcome .
+  OPTIONAL { ?evidence sv:boundArtifact ?artifact . ?artifact sv:sha256 ?sha . }
+}
+ORDER BY ?claim ?evidence
