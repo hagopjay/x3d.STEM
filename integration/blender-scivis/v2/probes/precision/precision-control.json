@@ -1,0 +1,198 @@
+{
+  "schema": "scivis.precision-probe/1",
+  "status": "pass",
+  "created_utc": "2026-11-17T20:02:05.567286+00:00",
+  "blender_version": "5.2.4 LTS",
+  "blender_version_tuple": [
+    5,
+    2,
+    4
+  ],
+  "blender_build_hash": "cd5dc428cce1",
+  "source_sha256": "a775c6497905595e942b8e0db4239fd515fecc12d60198485cdd34f8b85842fc",
+  "blend_sha256": "cf57b76516aad620044cad77c26de3cad56d4bbc667a074c6efbfc08b37ffbad",
+  "save_reopen_executed": true,
+  "origin_metadata_retained": true,
+  "coordinate_type": "Reopened Blender MeshVertex.co, compared with binary32 struct reference",
+  "cases": [
+    {
+      "case_id": "ecef_like",
+      "units": "m",
+      "origin": [
+        6378137.0,
+        1400000.0,
+        3000000.0
+      ],
+      "float32_spacing_at_origin_m": [
+        0.5,
+        0.125,
+        0.25
+      ],
+      "direct_world_max_abs_error_m": 0.23450000025331974,
+      "local_storage_max_abs_error_m": 1.8905848264694214e-06,
+      "restored_world_max_abs_error_m": 1.8905848264694214e-06,
+      "local_origin_improvement_factor": 124035.6935960591,
+      "direct_matches_binary32_reference": true,
+      "actual_vertex_mutation_caught": true,
+      "direct_readback": [
+        [
+          6378137.0,
+          1400000.0,
+          3000000.0
+        ],
+        [
+          6378137.0,
+          1400000.0,
+          3000000.0
+        ],
+        [
+          6378138.0,
+          1399999.875,
+          3000000.0
+        ],
+        [
+          6378260.5,
+          1400012.375,
+          2999998.75
+        ]
+      ],
+      "local_readback": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.009999999776482582,
+          0.019999999552965164,
+          0.029999999329447746
+        ],
+        [
+          1.2345000505447388,
+          -0.06789000332355499,
+          0.00012299977242946625
+        ],
+        [
+          123.456787109375,
+          12.34567928314209,
+          -1.2345678806304932
+        ]
+      ],
+      "restored_world": [
+        [
+          6378137.0,
+          1400000.0,
+          3000000.0
+        ],
+        [
+          6378137.01,
+          1400000.0199999996,
+          3000000.0299999993
+        ],
+        [
+          6378138.234500051,
+          1399999.9321099967,
+          3000000.000123
+        ],
+        [
+          6378260.456787109,
+          1400012.3456792831,
+          2999998.7654321194
+        ]
+      ]
+    },
+    {
+      "case_id": "utm_like",
+      "units": "m",
+      "origin": [
+        500000.0,
+        4649776.0,
+        120.0
+      ],
+      "float32_spacing_at_origin_m": [
+        0.03125,
+        0.5,
+        7.62939453125e-06
+      ],
+      "direct_world_max_abs_error_m": 0.15432109963148832,
+      "local_storage_max_abs_error_m": 1.8906430341303349e-06,
+      "restored_world_max_abs_error_m": 1.8906430341303349e-06,
+      "local_origin_improvement_factor": 81623.60469197377,
+      "direct_matches_binary32_reference": true,
+      "actual_vertex_mutation_caught": true,
+      "direct_readback": [
+        [
+          500000.0,
+          4649776.0,
+          120.0
+        ],
+        [
+          500000.0,
+          4649776.0,
+          120.02999877929688
+        ],
+        [
+          500001.25,
+          4649776.0,
+          120.0001220703125
+        ],
+        [
+          500123.46875,
+          4649788.5,
+          118.76543426513672
+        ]
+      ],
+      "local_readback": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.009999999776482582,
+          0.019999999552965164,
+          0.029999999329447746
+        ],
+        [
+          1.2345000505447388,
+          -0.06789000332355499,
+          0.0001230000052601099
+        ],
+        [
+          123.456787109375,
+          12.34567928314209,
+          -1.2345678806304932
+        ]
+      ],
+      "restored_world": [
+        [
+          500000.0,
+          4649776.0,
+          120.0
+        ],
+        [
+          500000.0099999998,
+          4649776.02,
+          120.02999999932945
+        ],
+        [
+          500001.23450005054,
+          4649775.932109997,
+          120.00012300000526
+        ],
+        [
+          500123.4567871094,
+          4649788.345679283,
+          118.7654321193695
+        ]
+      ]
+    }
+  ],
+  "scope": "Two synthetic metric-coordinate controls on actual Blender5.2.4 mesh storage; no native X3D or splat import, renderer/GPU precision, or arbitrary scale guarantee.",
+  "limitations": [
+    "Origin restoration occurs in Python binary64 outside Blender world transforms.",
+    "Adding a large origin to Blender matrix_world may reintroduce precision loss.",
+    "Centering is a reversible coordinate mapping, not rescaling or changing physical units.",
+    "Do not infer a universal 1e-6 absolute tolerance from float32 storage."
+  ]
+}

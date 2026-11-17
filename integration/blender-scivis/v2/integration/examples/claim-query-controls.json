@@ -1,0 +1,427 @@
+{
+  "status": "pass",
+  "json_schema": "draft2020-12",
+  "claims": {
+    "supported_within_declared_scope": 16,
+    "unsupported": 7
+  },
+  "claim_results": [
+    {
+      "claim": "urn:x3d-scivis:claim:release-suite",
+      "status": "supported_within_declared_scope",
+      "covered_facets": [
+        "software.regression_suite"
+      ],
+      "missing_facets": [],
+      "evidence_used": [
+        "urn:x3d-scivis:evidencerecord:research-loom-release"
+      ],
+      "evidence_rejected": [],
+      "scope": "Local model, transfer, HTTP and UI-adapter checks. Native X_ITE browser rendering is not claimed.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:readback-flow-balanced",
+      "status": "supported_within_declared_scope",
+      "covered_facets": [
+        "data.vtk_readback",
+        "geometry.x3d_readback",
+        "science.sampled_invariants"
+      ],
+      "missing_facets": [],
+      "evidence_used": [
+        "urn:x3d-scivis:evidencerecord:readback-flow-balanced"
+      ],
+      "evidence_rejected": [],
+      "scope": "Published static geometry and local scientific/transfer checks; no native browser, GPU, Blender execution or external Loom-profile certification.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:readback-flow-integrable",
+      "status": "supported_within_declared_scope",
+      "covered_facets": [
+        "data.vtk_readback",
+        "geometry.x3d_readback",
+        "science.sampled_invariants"
+      ],
+      "missing_facets": [],
+      "evidence_used": [
+        "urn:x3d-scivis:evidencerecord:readback-flow-integrable"
+      ],
+      "evidence_rejected": [],
+      "scope": "Published static geometry and local scientific/transfer checks; no native browser, GPU, Blender execution or external Loom-profile certification.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:readback-flow-anisotropic",
+      "status": "supported_within_declared_scope",
+      "covered_facets": [
+        "data.vtk_readback",
+        "geometry.x3d_readback",
+        "science.sampled_invariants"
+      ],
+      "missing_facets": [],
+      "evidence_used": [
+        "urn:x3d-scivis:evidencerecord:readback-flow-anisotropic"
+      ],
+      "evidence_rejected": [],
+      "scope": "Published static geometry and local scientific/transfer checks; no native browser, GPU, Blender execution or external Loom-profile certification.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:readback-tensor-correlated",
+      "status": "supported_within_declared_scope",
+      "covered_facets": [
+        "data.vtk_readback",
+        "geometry.x3d_readback",
+        "science.sampled_invariants"
+      ],
+      "missing_facets": [],
+      "evidence_used": [
+        "urn:x3d-scivis:evidencerecord:readback-tensor-correlated"
+      ],
+      "evidence_rejected": [],
+      "scope": "Published static geometry and local scientific/transfer checks; no native browser, GPU, Blender execution or external Loom-profile certification.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:readback-tensor-spherical",
+      "status": "supported_within_declared_scope",
+      "covered_facets": [
+        "data.vtk_readback",
+        "geometry.x3d_readback",
+        "science.sampled_invariants"
+      ],
+      "missing_facets": [],
+      "evidence_used": [
+        "urn:x3d-scivis:evidencerecord:readback-tensor-spherical"
+      ],
+      "evidence_rejected": [],
+      "scope": "Published static geometry and local scientific/transfer checks; no native browser, GPU, Blender execution or external Loom-profile certification.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:readback-tensor-mixture",
+      "status": "supported_within_declared_scope",
+      "covered_facets": [
+        "data.vtk_readback",
+        "geometry.x3d_readback",
+        "science.sampled_invariants"
+      ],
+      "missing_facets": [],
+      "evidence_used": [
+        "urn:x3d-scivis:evidencerecord:readback-tensor-mixture"
+      ],
+      "evidence_rejected": [],
+      "scope": "Published static geometry and local scientific/transfer checks; no native browser, GPU, Blender execution or external Loom-profile certification.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:readback-modes-fundamental",
+      "status": "supported_within_declared_scope",
+      "covered_facets": [
+        "data.vtk_readback",
+        "geometry.x3d_readback",
+        "science.sampled_invariants"
+      ],
+      "missing_facets": [],
+      "evidence_used": [
+        "urn:x3d-scivis:evidencerecord:readback-modes-fundamental"
+      ],
+      "evidence_rejected": [],
+      "scope": "Published static geometry and local scientific/transfer checks; no native browser, GPU, Blender execution or external Loom-profile certification.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:readback-modes-degenerate",
+      "status": "supported_within_declared_scope",
+      "covered_facets": [
+        "data.vtk_readback",
+        "geometry.x3d_readback",
+        "science.sampled_invariants"
+      ],
+      "missing_facets": [],
+      "evidence_used": [
+        "urn:x3d-scivis:evidencerecord:readback-modes-degenerate"
+      ],
+      "evidence_rejected": [],
+      "scope": "Published static geometry and local scientific/transfer checks; no native browser, GPU, Blender execution or external Loom-profile certification.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:readback-modes-beats",
+      "status": "supported_within_declared_scope",
+      "covered_facets": [
+        "data.vtk_readback",
+        "geometry.x3d_readback",
+        "science.sampled_invariants"
+      ],
+      "missing_facets": [],
+      "evidence_used": [
+        "urn:x3d-scivis:evidencerecord:readback-modes-beats"
+      ],
+      "evidence_rejected": [],
+      "scope": "Published static geometry and local scientific/transfer checks; no native browser, GPU, Blender execution or external Loom-profile certification.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:x3d-frames",
+      "status": "supported_within_declared_scope",
+      "covered_facets": [
+        "syntax.semantic_vocabulary4-1",
+        "syntax.xsd4"
+      ],
+      "missing_facets": [],
+      "evidence_used": [
+        "urn:x3d-scivis:evidencerecord:x3d-frames"
+      ],
+      "evidence_rejected": [],
+      "scope": "All authored saved frame documents; no XSD3.3 or native rendering claim.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:blender-geometry-flow",
+      "status": "supported_within_declared_scope",
+      "covered_facets": [
+        "geometry.color_attributes",
+        "geometry.coordinates",
+        "geometry.topology"
+      ],
+      "missing_facets": [],
+      "evidence_used": [
+        "urn:x3d-scivis:evidencerecord:transfer-flow"
+      ],
+      "evidence_rejected": [],
+      "scope": "Selected saved frame only. No arbitrary modifier, appearance parity or post-edit solver certification.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:browser-flow",
+      "status": "unsupported",
+      "covered_facets": [],
+      "missing_facets": [
+        "appearance.native_browser_visibility"
+      ],
+      "evidence_used": [],
+      "evidence_rejected": [
+        {
+          "evidence": "urn:x3d-scivis:evidencerecord:transfer-flow",
+          "reason": "unrelated_facet"
+        }
+      ],
+      "scope": "Deliberately unsupported control: a passing geometry transfer cannot supply this facet.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:post-edit-flow",
+      "status": "unsupported",
+      "covered_facets": [],
+      "missing_facets": [
+        "science.after_geometry_edit"
+      ],
+      "evidence_used": [],
+      "evidence_rejected": [
+        {
+          "evidence": "urn:x3d-scivis:evidencerecord:transfer-flow",
+          "reason": "unrelated_facet"
+        }
+      ],
+      "scope": "Deliberately unsupported control: a passing geometry transfer cannot supply this facet.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:blender-geometry-tensor",
+      "status": "supported_within_declared_scope",
+      "covered_facets": [
+        "geometry.color_attributes",
+        "geometry.coordinates",
+        "geometry.topology"
+      ],
+      "missing_facets": [],
+      "evidence_used": [
+        "urn:x3d-scivis:evidencerecord:transfer-tensor"
+      ],
+      "evidence_rejected": [],
+      "scope": "Selected saved frame only. No arbitrary modifier, appearance parity or post-edit solver certification.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:browser-tensor",
+      "status": "unsupported",
+      "covered_facets": [],
+      "missing_facets": [
+        "appearance.native_browser_visibility"
+      ],
+      "evidence_used": [],
+      "evidence_rejected": [
+        {
+          "evidence": "urn:x3d-scivis:evidencerecord:transfer-tensor",
+          "reason": "unrelated_facet"
+        }
+      ],
+      "scope": "Deliberately unsupported control: a passing geometry transfer cannot supply this facet.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:post-edit-tensor",
+      "status": "unsupported",
+      "covered_facets": [],
+      "missing_facets": [
+        "science.after_geometry_edit"
+      ],
+      "evidence_used": [],
+      "evidence_rejected": [
+        {
+          "evidence": "urn:x3d-scivis:evidencerecord:transfer-tensor",
+          "reason": "unrelated_facet"
+        }
+      ],
+      "scope": "Deliberately unsupported control: a passing geometry transfer cannot supply this facet.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:blender-geometry-modes",
+      "status": "supported_within_declared_scope",
+      "covered_facets": [
+        "geometry.color_attributes",
+        "geometry.coordinates",
+        "geometry.topology"
+      ],
+      "missing_facets": [],
+      "evidence_used": [
+        "urn:x3d-scivis:evidencerecord:transfer-modes"
+      ],
+      "evidence_rejected": [],
+      "scope": "Selected saved frame only. No arbitrary modifier, appearance parity or post-edit solver certification.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:browser-modes",
+      "status": "unsupported",
+      "covered_facets": [],
+      "missing_facets": [
+        "appearance.native_browser_visibility"
+      ],
+      "evidence_used": [],
+      "evidence_rejected": [
+        {
+          "evidence": "urn:x3d-scivis:evidencerecord:transfer-modes",
+          "reason": "unrelated_facet"
+        }
+      ],
+      "scope": "Deliberately unsupported control: a passing geometry transfer cannot supply this facet.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:post-edit-modes",
+      "status": "unsupported",
+      "covered_facets": [],
+      "missing_facets": [
+        "science.after_geometry_edit"
+      ],
+      "evidence_used": [],
+      "evidence_rejected": [
+        {
+          "evidence": "urn:x3d-scivis:evidencerecord:transfer-modes",
+          "reason": "unrelated_facet"
+        }
+      ],
+      "scope": "Deliberately unsupported control: a passing geometry transfer cannot supply this facet.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:historical-corpus-counts-current",
+      "status": "unsupported",
+      "covered_facets": [],
+      "missing_facets": [
+        "corpus.inventory_count"
+      ],
+      "evidence_used": [],
+      "evidence_rejected": [
+        {
+          "evidence": "urn:x3d-scivis:evidencerecord:historical-corpus-counts",
+          "reason": "nonpassing_outcome"
+        }
+      ],
+      "scope": "Deliberately unsupported: historical prose cannot establish a fresh current corpus census.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:local-origin-probe",
+      "status": "supported_within_declared_scope",
+      "covered_facets": [
+        "artifact.blend_save_reopen",
+        "geometry.binary32_local_origin_comparison"
+      ],
+      "missing_facets": [],
+      "evidence_used": [
+        "urn:x3d-scivis:evidencerecord:local-origin-probe"
+      ],
+      "evidence_rejected": [],
+      "scope": "Two synthetic metric-coordinate controls on actual Blender5.2.4 mesh storage; no native X3D or splat import, renderer/GPU precision, or arbitrary scale guarantee.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    },
+    {
+      "claim": "urn:x3d-scivis:claim:native53-probe",
+      "status": "supported_within_declared_scope",
+      "covered_facets": [
+        "data.native_splat_attribute_layout",
+        "geometry.splat_apply_transform_observed"
+      ],
+      "missing_facets": [],
+      "evidence_used": [
+        "urn:x3d-scivis:evidencerecord:native53-probe"
+      ],
+      "evidence_rejected": [],
+      "scope": "Executed native Blender5.3.0 four-splat SH3 data/mapping probe; not a corpus or performance benchmark, nor proof of pixels, physics or general conformance.",
+      "binding_inspected_at": "2026-11-17T20:38:21.046900+00:00",
+      "fresh_execution": false,
+      "grade_policy": "No Confirmed/Likely/Suspected grade is rewritten; no support beyond the named subjects and facets."
+    }
+  ],
+  "scope": "Current recorded-support queries; no scientific pipeline is re-executed by this check."
+}

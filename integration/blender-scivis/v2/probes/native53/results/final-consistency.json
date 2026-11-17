@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "checks": {
+    "probe_source": true,
+    "blend": true,
+    "fixture": true,
+    "validated_xml": true,
+    "validator_adapter": true,
+    "fork_clean": true,
+    "known_transform_loss_explicit": true,
+    "all_native_save_reopen_exact": true,
+    "xsd_and_semantic": true
+  }
+}

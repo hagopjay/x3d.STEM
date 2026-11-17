@@ -1,0 +1,27 @@
+@prefix sv: <urn:x3d-scivis:inventory:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+sv:ArtifactShape a sh:NodeShape ; sh:targetClass sv:Artifact ;
+  sh:property [ sh:path sv:sha256 ; sh:minCount 1 ; sh:maxCount 1 ;
+                sh:datatype xsd:string ; sh:pattern "^[0-9a-f]{64}$" ] ;
+  sh:property [ sh:path sv:hashMethod ; sh:minCount 1 ; sh:maxCount 1 ;
+                sh:hasValue "sha256-file-bytes" ] ;
+  sh:property [ sh:path sv:confidentiality ; sh:minCount 1 ; sh:maxCount 1 ;
+                sh:in ("private" "restricted" "public") ] .
+
+sv:EvidenceRecordShape a sh:NodeShape ; sh:targetClass sv:EvidenceRecord ;
+  sh:property [ sh:path sv:evidenceState ; sh:minCount 1 ; sh:maxCount 1 ;
+                sh:in ("reported" "inspected" "executed" "reproduced") ] ;
+  sh:property [ sh:path sv:outcome ; sh:minCount 1 ; sh:maxCount 1 ;
+                sh:in ("pass" "fail" "partial" "unknown") ] ;
+  sh:property [ sh:path dcterms:description ; sh:minCount 1 ; sh:datatype xsd:string ] .
+
+sv:ClaimShape a sh:NodeShape ; sh:targetClass sv:Claim ;
+  sh:property [ sh:path dcterms:title ; sh:minCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path dcterms:description ; sh:minCount 1 ; sh:datatype xsd:string ] .
+
+# These shapes validate metadata structure. Live file hashing, tool binding and
+# acceptance-facet support are separately checked by integration/inventory.py.
+# Neither SHACL nor the JSON schema establishes physical truth or authenticity.

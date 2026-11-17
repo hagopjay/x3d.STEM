@@ -1,0 +1,9 @@
+{
+  "repository": "hagopjay/x3d.ml",
+  "commit": "c1634f5c4f29c4220a092510807a430ce4cbfd2e",
+  "path": "src/x3dprov.py",
+  "base_sha256": "74746444c0093a72636686fa325da5950802d860861e61a859ed1c0ba78cedae",
+  "sha256": "dbc54523ac6bcd10a9005379b1d723f2b033a60ed093c125b942e90bd1dee40e",
+  "scope": "Private x3dprov/0.1 source with one literal-replacement callback fix, reusing the archived xprov repair. Protocol and content hashing unchanged.",
+  "confidentiality": "private"
+}
